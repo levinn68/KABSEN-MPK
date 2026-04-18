@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK KABSEN — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css?v=20260418k" />
+  <link rel="stylesheet" href="../assets/css/pages.css?v=20260418k" />
+  <link rel="stylesheet" href="../assets/css/mobile.css?v=20260418k" />
+  <link rel="stylesheet" href="../assets/css/loader.css?v=20260418k" />
+  <link rel="stylesheet" href="../assets/css/production-v4.css?v=20260418k" />
+  <link rel="stylesheet" href="../assets/css/production-v5.css?v=20260418k" />
+</head>
+<body data-page="admin">
+  <div class="app-shell compact-shell admin-shell">
+    <main class="main-content">
+      <header class="page-header split">
+        <div>
+          <p class="eyebrow">Admin Export</p>
+          <h1>Unduh data yang lebih rapi</h1>
+          <p class="subtitle">Halaman ini tidak muncul di navbar. File yang diunduh sudah dipermudah biar tidak bikin pusing.</p>
+        </div>
+        <div class="topbar-actions">
+          <a href="../dashboard.html" class="btn btn-ghost">Kembali</a>
+        </div>
+      </header>
+
+      <section class="content-grid two-columns admin-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Akses Admin</p>
+              <h3>Masukkan password export</h3>
+              <p class="compact-text">Halaman ini minta password dulu. Tombol download baru muncul setelah password admin benar.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <label class="full">
+              <span>Password admin</span>
+              <input id="adminPasswordInput" type="password" placeholder="Masukkan password admin" autocomplete="current-password" />
+            </label>
+            <div class="admin-fixed-range full">
+              <strong>Periode rekap otomatis</strong>
+              <span>Mulai 20 Apr 2026 sampai hari ini. Tidak perlu pilih tanggal lagi.</span>
+            </div>
+            <div class="form-actions full">
+              <button class="btn btn-primary" type="button" id="btnVerifyAdminAccess">Buka Akses Admin</button>
+            </div>
+          </div>
+          <div class="admin-status-note" id="adminAccessStatus">Akses belum dibuka.</div>
+        </article>
+
+        <article class="panel admin-download-panel" id="adminDownloadPanel" hidden>
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Download All-in-One</p>
+              <h3>Unduh rekap aktivitas anggota</h3>
+              <p class="compact-text">Satu file HTML berisi total rapat, piket ROM, dan kas per anggota dari 20 Apr 2026 sampai hari ini.</p>
+            </div>
+          </div>
+          <div class="admin-download-grid">
+            <button class="btn btn-primary" type="button" id="btnAdminExportAllInOne">Download Rekap Aktivitas</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/config.js?v=20260418k"></script>
+  <script src="../assets/js/supabase.js?v=20260418k"></script>
+  <script src="../assets/js/loader.js?v=20260418k"></script>
+  <script src="../assets/js/admin.js?v=20260418k"></script>
+</body>
+</html>
