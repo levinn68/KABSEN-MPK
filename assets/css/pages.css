@@ -1,0 +1,668 @@
+/* Page refinements */
+.page-header.compact-page-header{padding-bottom:8px}
+.compact-member-card .member-meta,.compact-member-card .member-actions{grid-column:1/-1}
+.compact-profile-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.panel.attendance-summary-panel,.panel.ro-summary-panel{overflow:hidden}
+.attendance-summary-grid,.ro-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.attendance-mini-card,.ro-mini-card{min-height:122px;border-radius:22px;padding:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;flex-direction:column;justify-content:space-between}
+.attendance-mini-card span,.ro-mini-card span{font-size:14px;color:rgba(255,255,255,.76)}
+.attendance-mini-card strong,.ro-mini-card strong{font-size:38px;line-height:1;font-weight:800;color:#fff}
+.attendance-summary-panel{position:relative;padding:24px;border-radius:28px;background:linear-gradient(135deg,rgba(13,31,69,.98),rgba(28,98,159,.92));color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 60px rgba(8,18,44,.18)}
+.attendance-summary-panel::before,.ro-summary-panel::before{content:"";position:absolute;width:240px;height:240px;right:-70px;top:-90px;border-radius:999px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);pointer-events:none}
+.attendance-summary-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:18px;position:relative;z-index:1}
+.attendance-summary-head h3{margin:0;font-size:30px;line-height:1.12;color:#fff}
+.attendance-inline-select{min-width:240px;display:grid;gap:8px}
+.attendance-inline-select span{font-size:13px;font-weight:700;color:rgba(255,255,255,.76)}
+.attendance-inline-select select,.ro-inline-select select{min-height:48px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.attendance-inline-select select option,.ro-inline-select select option{color:#0f172a}
+.attendance-page-grid,.ro-page-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:18px;align-items:start}
+.attendance-side-stack,.ro-side-stack{display:grid;gap:18px}
+.attendance-camera-panel,.ro-camera-panel{padding:20px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(247,250,255,.88));border:1px solid rgba(148,163,184,.18);box-shadow:0 24px 50px rgba(15,23,42,.08)}
+.attendance-field-grid,.ro-field-grid{display:grid;gap:14px;margin-bottom:16px}
+.attendance-field-grid label,.ro-field-grid label{display:grid;gap:8px}
+.attendance-field-grid span,.ro-field-grid span{font-size:13px;font-weight:700;color:#64748b}
+.attendance-field-grid select,.ro-field-grid select{min-height:52px;border-radius:18px;border:1px solid rgba(148,163,184,.24);background:rgba(255,255,255,.92);padding:0 16px}
+.attendance-camera-stage,.ro-camera-stage{position:relative;width:100%;aspect-ratio:4/5;min-height:0;height:auto;border-radius:26px;overflow:hidden;display:grid;place-items:center;padding:18px;background:radial-gradient(circle at center,rgba(35,105,255,.14),transparent 40%),linear-gradient(180deg,#06142f 0%,#08204a 100%);border:1px solid rgba(106,167,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 24px 60px rgba(2,6,23,.18)}
+.attendance-camera-stage::before,.ro-camera-stage::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(74,124,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,124,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;opacity:.45}
+.attendance-camera-stage video,.ro-camera-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#081224}
+.attendance-camera-stage .camera-overlay,.ro-camera-stage .camera-overlay{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2}
+.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(64%,320px);aspect-ratio:3/4;border-radius:28px;border:2px solid rgba(84,226,255,.72);box-shadow:0 0 0 1px rgba(84,226,255,.12),0 0 18px rgba(84,226,255,.12),inset 0 0 0 999px rgba(2,6,23,.12);position:relative;inset:auto}
+.attendance-camera-stage .scan-frame::before,.ro-camera-stage .scan-frame::before{content:"";position:absolute;inset:22px;border-radius:22px;border:2px dashed rgba(190,235,255,.45)}
+.attendance-camera-stage .scan-frame::after,.ro-camera-stage .scan-frame::after{content:"";position:absolute;left:12%;right:12%;bottom:30%;height:4px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(86,230,255,.95),transparent);box-shadow:0 0 20px rgba(86,230,255,.55)}
+.attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{position:absolute;left:16px;right:16px;bottom:78px;z-index:3;border-radius:18px;padding:16px 18px;background:rgba(5,14,32,.60);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff}
+.attendance-camera-stage .camera-empty-state strong,.ro-camera-stage .camera-empty-state strong{display:block;margin-bottom:8px;font-size:18px}
+.attendance-camera-stage .camera-empty-state span,.ro-camera-stage .camera-empty-state span{display:block;font-size:14px;line-height:1.55;color:rgba(255,255,255,.78)}
+.attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{position:absolute;left:16px;right:16px;bottom:16px;min-height:48px;border-radius:999px;background:rgba(3,10,26,.88);border:1px solid rgba(255,255,255,.06);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;z-index:4;font-size:14px;font-weight:700}
+.attendance-camera-stage .camera-status-chip::before,.ro-camera-stage .camera-status-chip::before{content:"";width:12px;height:12px;border-radius:999px;background:#fb7185;box-shadow:0 0 0 6px rgba(251,113,133,.18)}
+.attendance-camera-stage.camera-live .camera-status-chip::before,.ro-camera-stage.camera-live .camera-status-chip::before{background:#22c55e;box-shadow:0 0 0 6px rgba(34,197,94,.18)}
+.attendance-camera-stage.camera-live .camera-empty-state,.ro-camera-stage.camera-live .camera-empty-state{opacity:0;pointer-events:none;transform:translateY(10px);transition:180ms ease}
+.attendance-camera-actions,.ro-camera-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.attendance-camera-actions .btn,.ro-camera-actions .btn{min-height:56px;border-radius:18px;font-size:17px;font-weight:800}
+.ro-tight-table{border-radius:18px;overflow:auto;border:1px solid rgba(148,163,184,.14)}
+.ro-tight-table table{min-width:100%}
+.compact-text{font-size:14px;color:#6b7d96;line-height:1.55}
+@media (max-width:1024px){.attendance-page-grid,.ro-page-grid{grid-template-columns:1fr}.attendance-side-stack,.ro-side-stack{order:2}.attendance-camera-panel,.ro-camera-panel{order:1}}
+@media (max-width:720px){.attendance-summary-head,.ro-summary-head{flex-direction:column;align-items:stretch}.attendance-inline-select,.ro-inline-select{min-width:100%}.attendance-summary-grid,.ro-summary-grid{grid-template-columns:1fr}.attendance-camera-stage,.ro-camera-stage{aspect-ratio:4/5.4;padding:14px;border-radius:24px}.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(72%,280px)}.attendance-camera-actions,.ro-camera-actions{grid-template-columns:1fr}}
+
+
+/* ===== v13 scan refinements ===== */
+.ro-summary-panel{position:relative;padding:26px;border-radius:30px;background:linear-gradient(135deg,rgba(12,33,74,.98),rgba(35,116,199,.92));color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 60px rgba(8,18,44,.18)}
+.ro-summary-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:20px;position:relative;z-index:1}
+.ro-summary-head h3{margin:0;font-size:30px;line-height:1.12;color:#fff}
+.ro-inline-select{min-width:240px;display:grid;gap:8px}
+.ro-inline-select span{font-size:13px;font-weight:700;color:rgba(255,255,255,.78)}
+.ro-mini-card{min-height:138px;padding:20px;border-radius:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.10)}
+.ro-mini-card strong{font-size:42px;color:#fff}
+.ro-mini-card span{font-size:14px;color:rgba(255,255,255,.78)}
+.ro-page-grid{gap:24px;align-items:start}
+.ro-side-stack{gap:24px}
+.ro-camera-panel,.attendance-camera-panel{padding:22px;border-radius:30px}
+.ro-field-grid,.attendance-field-grid{margin-bottom:18px}
+.ro-camera-stage,.attendance-camera-stage{aspect-ratio:4/5.25;border-radius:30px;padding:20px;background:radial-gradient(circle at center,rgba(35,105,255,.12),transparent 42%),linear-gradient(180deg,#07152e 0%,#0a234d 100%)}
+.ro-camera-stage .scan-frame,.attendance-camera-stage .scan-frame{width:min(58%,300px);aspect-ratio:3/4.15;border-radius:30px;border:1.5px solid rgba(105,220,255,.38);box-shadow:0 0 0 1px rgba(105,220,255,.08),inset 0 0 0 999px rgba(2,6,23,.08)}
+.ro-camera-stage .scan-frame::before,.attendance-camera-stage .scan-frame::before{inset:18px;border-radius:24px;border:1.5px dashed rgba(190,235,255,.24)}
+.ro-camera-stage .scan-frame::after,.attendance-camera-stage .scan-frame::after{left:16%;right:16%;bottom:28%;height:3px;box-shadow:0 0 16px rgba(86,230,255,.34)}
+.ro-camera-stage .camera-empty-state,.attendance-camera-stage .camera-empty-state{left:18px;right:18px;bottom:78px;padding:18px 20px;border-radius:20px;background:rgba(6,16,36,.58)}
+.ro-camera-stage .camera-empty-state strong,.attendance-camera-stage .camera-empty-state strong{font-size:17px}
+.ro-camera-stage .camera-empty-state span,.attendance-camera-stage .camera-empty-state span{font-size:14px;line-height:1.65}
+.ro-camera-stage .camera-status-chip,.attendance-camera-stage .camera-status-chip{left:18px;right:18px;bottom:18px;min-height:50px;border-radius:999px}
+.ro-camera-actions,.attendance-camera-actions{grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.ro-camera-actions .btn,.attendance-camera-actions .btn{min-height:56px;border-radius:18px}
+.ro-roster-panel,.ro-recent-panel{padding:22px;border-radius:28px}
+.ro-tight-table{border-radius:20px}
+.ro-tight-table tbody td{padding-top:18px;padding-bottom:18px}
+.activity-list.compact{gap:14px}
+.activity-list.compact li{padding:16px 18px;border-radius:18px}
+@media (max-width:1024px){.ro-page-grid,.attendance-page-grid{grid-template-columns:1fr}.ro-summary-head,.attendance-summary-head{align-items:stretch}.ro-mini-card{min-height:120px}}
+@media (max-width:720px){.ro-summary-panel,.attendance-summary-panel{padding:18px;border-radius:26px}.ro-summary-head h3,.attendance-summary-head h3{font-size:26px}.ro-inline-select,.attendance-inline-select{min-width:100%}.ro-summary-grid,.attendance-summary-grid{grid-template-columns:1fr;gap:14px}.ro-mini-card,.attendance-mini-card{min-height:108px;padding:16px}.ro-mini-card strong,.attendance-mini-card strong{font-size:36px}.ro-camera-panel,.attendance-camera-panel{padding:18px;border-radius:26px}.ro-camera-stage,.attendance-camera-stage{aspect-ratio:4/5.55;padding:16px;border-radius:26px}.ro-camera-stage .scan-frame,.attendance-camera-stage .scan-frame{width:min(64%,260px)}.ro-camera-stage .camera-empty-state,.attendance-camera-stage .camera-empty-state{left:14px;right:14px;bottom:72px;padding:16px}.ro-camera-stage .camera-status-chip,.attendance-camera-stage .camera-status-chip{left:14px;right:14px;bottom:14px}.ro-camera-actions,.attendance-camera-actions{grid-template-columns:1fr}}
+
+/* ===== v14 gold premium overrides ===== */
+:root{
+  --gold:#facc15;
+  --gold-strong:#f59e0b;
+  --gold-soft:rgba(250,204,21,.16);
+  --ink:#08111f;
+  --navy:#0b1730;
+}
+body{
+  background:
+    radial-gradient(circle at top left, rgba(250,204,21,.10), transparent 24%),
+    radial-gradient(circle at top right, rgba(245,158,11,.10), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(29,78,216,.08), transparent 20%),
+    linear-gradient(180deg, #f7f5ef 0%, #f3efe6 36%, #faf7f1 100%);
+}
+body::before{background:rgba(250,204,21,.14)}
+body::after{background:rgba(245,158,11,.12)}
+.eyebrow{color:#9f7a0b}
+.eyebrow::before{background:linear-gradient(135deg,var(--gold),var(--gold-strong));box-shadow:0 0 0 6px rgba(250,204,21,.12)}
+.page-header h1{color:#14284e}
+.page-header .subtitle{color:#677996}
+.panel,.camera-panel,.ro-roster-panel,.ro-recent-panel{
+  background:linear-gradient(180deg, rgba(255,250,242,.92), rgba(255,255,255,.84));
+  border:1px solid rgba(212,175,55,.16);
+  box-shadow:0 18px 42px rgba(42,33,15,.06);
+}
+.detail-list{
+  display:grid;
+  gap:18px;
+}
+.detail-list > div{
+  padding:22px 22px 20px;
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,252,247,.94), rgba(248,244,235,.88));
+  border:1px solid rgba(212,175,55,.14);
+  box-shadow:0 10px 20px rgba(42,33,15,.04);
+}
+.timeline-grid{gap:20px}
+.timeline-card{padding:24px 22px;border-radius:28px}
+.timeline-card.active{
+  background:linear-gradient(135deg, rgba(15,34,77,.98), rgba(183,129,18,.94));
+  border-color:rgba(250,204,21,.18);
+}
+.timeline-card.active .pill.primary{background:rgba(250,204,21,.16);color:#fff4cc}
+#meetingDetailList{margin-top:8px}
+.panel .panel-head{margin-bottom:18px}
+.attendance-summary-panel,.ro-summary-panel{
+  background:linear-gradient(135deg, rgba(10,22,44,.98), rgba(185,136,27,.92));
+  border:1px solid rgba(250,204,21,.16);
+  box-shadow:0 26px 64px rgba(40,30,10,.16);
+}
+.attendance-summary-panel::before,.ro-summary-panel::before{
+  background:radial-gradient(circle, rgba(250,204,21,.20), transparent 72%);
+}
+.attendance-summary-head h3,.ro-summary-head h3,
+.attendance-summary-panel .eyebrow,.ro-summary-panel .eyebrow,
+.attendance-summary-panel p,.ro-summary-panel p,
+.attendance-summary-panel span,.ro-summary-panel span,
+.attendance-summary-panel strong,.ro-summary-panel strong,
+#activeMeetingTitle,#picketSessionSummary{color:#fff6da !important;text-shadow:0 1px 1px rgba(0,0,0,.14)}
+.attendance-inline-select select,.ro-inline-select select{
+  background:rgba(255,245,215,.10);
+  border:1px solid rgba(250,204,21,.24);
+  color:#fff4d4;
+}
+.attendance-inline-select select option,.ro-inline-select select option{color:#11223f}
+.attendance-mini-card,.ro-mini-card{
+  background:linear-gradient(180deg, rgba(255,247,228,.11), rgba(255,255,255,.08));
+  border:1px solid rgba(250,204,21,.16);
+}
+.attendance-mini-card span,.ro-mini-card span{color:rgba(255,240,199,.72)}
+.attendance-camera-panel,.ro-camera-panel{
+  padding:24px;
+  border-radius:30px;
+  background:linear-gradient(180deg, rgba(255,252,246,.92), rgba(252,248,239,.88));
+  border:1px solid rgba(212,175,55,.16);
+}
+.attendance-camera-stage,.ro-camera-stage{
+  aspect-ratio:4/5.15;
+  padding:18px;
+  border-radius:30px;
+  background:radial-gradient(circle at center, rgba(250,204,21,.08), transparent 36%), linear-gradient(180deg,#081120 0%,#0a1830 100%);
+  border:1px solid rgba(250,204,21,.16);
+}
+.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{
+  width:min(56%,280px);
+  aspect-ratio:3/4.15;
+  border:1.5px solid rgba(250,204,21,.34);
+  border-radius:30px;
+  box-shadow:0 0 0 1px rgba(250,204,21,.08), inset 0 0 0 999px rgba(2,6,23,.06);
+}
+.attendance-camera-stage .scan-frame::before,.ro-camera-stage .scan-frame::before{
+  inset:18px;
+  border-radius:24px;
+  border:1.5px dashed rgba(250,224,158,.24);
+}
+.attendance-camera-stage .scan-frame::after,.ro-camera-stage .scan-frame::after{
+  left:18%;right:18%;bottom:28%;height:3px;
+  background:linear-gradient(90deg,transparent, rgba(250,204,21,.88), transparent);
+  box-shadow:0 0 14px rgba(250,204,21,.26);
+}
+.attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{
+  left:20px;right:20px;bottom:82px;padding:20px 22px;border-radius:22px;background:rgba(5,11,24,.60);
+}
+.attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{
+  left:20px;right:20px;bottom:20px;min-height:52px;background:rgba(4,10,22,.88);border:1px solid rgba(250,204,21,.10)
+}
+.attendance-camera-actions,.ro-camera-actions{grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.btn.btn-primary{background:linear-gradient(135deg,#d6a42d,#f0c55a);color:#13233f;box-shadow:0 18px 34px rgba(214,164,45,.18)}
+.btn.btn-ghost{background:linear-gradient(180deg, rgba(255,252,246,.98), rgba(248,244,235,.94));border:1px solid rgba(212,175,55,.18);color:#182a4f}
+.ro-target-card{
+  display:grid;gap:8px;padding:18px 18px 16px;margin-bottom:18px;border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,252,247,.94), rgba(247,241,227,.90));
+  border:1px solid rgba(212,175,55,.16);
+}
+.ro-target-label{font-size:13px;color:#8d6b12;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+#roAutoTargetName{font-size:28px;line-height:1.1;color:#13274d}
+#roAutoTargetHint{font-size:13px;color:#6a7b95;line-height:1.5}
+.visually-hidden{position:absolute !important;width:1px;height:1px;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.ro-roster-panel,.ro-recent-panel{padding:24px;border-radius:30px}
+.ro-tight-table{border-radius:22px;overflow:hidden}
+.ro-tight-table table{min-width:100%}
+.ro-tight-table thead th{background:rgba(245,239,226,.96);color:#8a6b16}
+.ro-tight-table tbody td{padding-top:20px;padding-bottom:20px}
+.compact-text{color:#7c8ca5}
+.pill.success{background:rgba(32,181,104,.12);color:#108652;border:1px solid rgba(16,134,82,.10)}
+.pill.danger{background:rgba(220,38,38,.10);color:#c43a3a;border:1px solid rgba(196,58,58,.12)}
+@media (max-width:720px){
+  .timeline-grid{gap:16px}
+  .detail-list{gap:14px}
+  .detail-list > div{padding:20px 18px}
+  .attendance-summary-panel,.ro-summary-panel{padding:20px;border-radius:28px}
+  .attendance-camera-panel,.ro-camera-panel{padding:20px;border-radius:28px}
+  .attendance-camera-stage,.ro-camera-stage{aspect-ratio:4/5.35;border-radius:28px;padding:16px}
+  .attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(60%,250px)}
+  .attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{left:16px;right:16px;bottom:74px;padding:18px}
+  .attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{left:16px;right:16px;bottom:16px}
+  #roAutoTargetName{font-size:24px}
+}
+
+
+
+/* ===== v15 refinements ===== */
+.brand-logo-lockup{padding:14px 16px;gap:12px}
+.brand-image{width:54px;height:54px;border-radius:50%;object-fit:cover;box-shadow:0 12px 24px rgba(12,32,80,.22)}
+.page-header h1{max-width:900px}
+.timeline-grid{gap:24px}
+.detail-list{gap:22px;margin-top:12px}
+.detail-list>div{padding:24px 24px 22px;border-radius:24px}
+#meetingDetailList.detail-list>div+div{margin-top:0}
+.ro-summary-panel,.attendance-summary-panel{padding:28px 26px 24px}
+.ro-summary-head,.attendance-summary-head{margin-bottom:22px}
+.ro-summary-panel h3,.ro-summary-panel .eyebrow,.ro-summary-panel p,.ro-summary-panel span,.ro-summary-panel strong,.attendance-summary-panel h3,.attendance-summary-panel .eyebrow,.attendance-summary-panel p,.attendance-summary-panel span,.attendance-summary-panel strong,#activeMeetingTitle,#picketSessionSummary{color:#fff2c2!important}
+.ro-summary-panel .ro-mini-card,.attendance-summary-panel .attendance-mini-card{background:linear-gradient(180deg,rgba(255,243,204,.08),rgba(255,255,255,.06));border-color:rgba(250,204,21,.14)}
+.ro-summary-panel .ro-mini-card span,.attendance-summary-panel .attendance-mini-card span{color:rgba(255,242,194,.76)!important}
+.ro-summary-panel .ro-mini-card strong,.attendance-summary-panel .attendance-mini-card strong{color:#fff9df!important}
+.ro-summary-panel .ro-inline-select select,.attendance-summary-panel .attendance-inline-select select{background:rgba(255,237,174,.08)!important;border-color:rgba(250,204,21,.16)!important;color:#fff6d7!important}
+.ro-camera-panel,.attendance-camera-panel{padding:22px;border-radius:30px;background:linear-gradient(180deg,rgba(255,251,244,.94),rgba(255,247,236,.88));border:1px solid rgba(212,175,55,.16)}
+.attendance-camera-stage,.ro-camera-stage{aspect-ratio:4/5.2;padding:22px;border-radius:30px;background:radial-gradient(circle at center,rgba(212,175,55,.10),transparent 42%),linear-gradient(180deg,#081a45 0%,#0d275f 100%);border-color:rgba(246,198,70,.18)}
+.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(58%,270px);aspect-ratio:0.76/1;border-radius:30px;border:2px solid rgba(246,198,70,.54);box-shadow:0 0 0 1px rgba(246,198,70,.10),0 0 18px rgba(246,198,70,.12),inset 0 0 0 999px rgba(2,6,23,.10)}
+.attendance-camera-stage .scan-frame::before,.ro-camera-stage .scan-frame::before{inset:18px;border-radius:24px;border:2px dashed rgba(255,240,193,.38)}
+.attendance-camera-stage .scan-frame::after,.ro-camera-stage .scan-frame::after{left:18%;right:18%;bottom:28%;height:3px;background:linear-gradient(90deg,transparent,rgba(246,198,70,.88),transparent);box-shadow:0 0 14px rgba(246,198,70,.26)}
+.attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{left:20px;right:20px;bottom:82px;padding:22px 22px 20px;border-radius:24px;background:rgba(4,10,22,.62);border:1px solid rgba(246,198,70,.08)}
+.attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{left:20px;right:20px;bottom:20px;min-height:54px;background:rgba(4,10,22,.92);border:1px solid rgba(246,198,70,.10);color:#fff4d0}
+.attendance-camera-stage .camera-status-chip::before,.ro-camera-stage .camera-status-chip::before{background:#f87171;box-shadow:0 0 0 6px rgba(248,113,113,.12)}
+.attendance-camera-stage.camera-live .camera-status-chip::before,.ro-camera-stage.camera-live .camera-status-chip::before{background:#22c55e;box-shadow:0 0 0 6px rgba(34,197,94,.16)}
+.attendance-camera-actions,.ro-camera-actions{grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.attendance-camera-actions .btn,.ro-camera-actions .btn{min-height:56px;border-radius:20px}
+.btn.btn-primary{background:linear-gradient(135deg,#c6941a,#f3ca66);color:#11213f;box-shadow:0 18px 34px rgba(214,164,45,.18)}
+.btn.btn-ghost{background:linear-gradient(180deg, rgba(255,252,246,.98), rgba(248,244,235,.94));border:1px solid rgba(212,175,55,.18);color:#182a4f}
+.ro-target-card,.attendance-target-card{display:grid;gap:8px;padding:18px 18px 16px;margin-bottom:18px;border-radius:22px;background:linear-gradient(180deg, rgba(255,252,247,.94), rgba(247,241,227,.90));border:1px solid rgba(212,175,55,.16)}
+.ro-target-label,.attendance-target-label{font-size:13px;color:#8d6b12;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+#roAutoTargetName,#attendanceAutoTargetName{font-size:30px;line-height:1.06;color:#13274d}
+#roAutoTargetHint,#attendanceAutoTargetHint{font-size:13px;color:#6a7b95;line-height:1.5}
+.ro-roster-panel,.ro-recent-panel{padding:26px;border-radius:30px}
+.ro-tight-table thead th{background:rgba(245,239,226,.96);color:#8a6b16}
+.ro-tight-table tbody td{padding-top:20px;padding-bottom:20px}
+@media (max-width:980px){.timeline-grid{gap:18px}.detail-list{gap:18px}.detail-list>div{padding:22px 20px}.ro-summary-panel,.attendance-summary-panel{padding:22px}.attendance-camera-panel,.ro-camera-panel{padding:20px}}
+@media (max-width:720px){.ro-summary-panel,.attendance-summary-panel{padding:20px 18px 18px}.ro-summary-head,.attendance-summary-head{margin-bottom:18px}.ro-summary-grid,.attendance-summary-grid{gap:12px}.ro-mini-card,.attendance-mini-card{min-height:118px}.attendance-camera-stage,.ro-camera-stage{aspect-ratio:4/5.35;padding:16px;border-radius:28px}.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(62%,248px)}.attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{left:16px;right:16px;bottom:74px;padding:18px}.attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{left:16px;right:16px;bottom:16px}.ro-camera-actions,.attendance-camera-actions{grid-template-columns:1fr}.ro-target-card,.attendance-target-card{padding:16px 16px 14px}#roAutoTargetName,#attendanceAutoTargetName{font-size:24px}}
+
+
+/* ===== v16 final rebuild overrides ===== */
+:root{
+  --mpk-gold:#f1bd40;
+  --mpk-gold-soft:#ffe9a5;
+  --mpk-navy:#06142e;
+  --mpk-navy-2:#0c2247;
+  --mpk-cream:#fff8ea;
+}
+
+body{
+  background:
+    radial-gradient(circle at top right, rgba(241,189,64,.10), transparent 20%),
+    linear-gradient(180deg, #f5f7fb 0%, #eef2f7 100%);
+}
+
+.brand strong,
+.mobile-brandbar__text strong{
+  font-family:'Orbitron','Inter',sans-serif !important;
+  letter-spacing:.18em !important;
+  text-transform:uppercase;
+}
+.brand small,
+.mobile-brandbar__text small{
+  font-family:'Poppins','Inter',sans-serif !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase;
+}
+
+.page-header h1,.topbar h1{
+  color:#11244a;
+  max-width:860px;
+}
+.page-header .subtitle,.topbar .subtitle{
+  color:#6b7892;
+  line-height:1.8;
+}
+
+.timeline-grid{gap:24px;}
+.detail-list{
+  display:grid;
+  gap:18px;
+  margin-top:16px;
+}
+.detail-list > div{
+  border-radius:24px;
+  padding:24px 24px 22px;
+  background:linear-gradient(180deg, rgba(255,251,244,.96), rgba(248,241,227,.94));
+  border:1px solid rgba(212,175,55,.16);
+  box-shadow:0 12px 24px rgba(8,17,32,.04);
+}
+.detail-list > div span{
+  display:block;
+  margin-bottom:10px;
+  color:#8e7846;
+  font-size:15px;
+}
+.detail-list > div strong{
+  color:#172848;
+  font-size:18px;
+  line-height:1.4;
+}
+
+.panel.attendance-summary-panel,
+.panel.ro-summary-panel{
+  position:relative;
+  overflow:hidden;
+  padding:28px 26px 24px;
+  border-radius:32px;
+  background:
+    radial-gradient(circle at top right, rgba(241,189,64,.16), transparent 28%),
+    linear-gradient(135deg, rgba(6,20,46,.98), rgba(12,34,71,.94));
+  border:1px solid rgba(241,189,64,.16);
+  box-shadow:0 26px 60px rgba(6,20,46,.16);
+}
+.panel.attendance-summary-panel::before,
+.panel.ro-summary-panel::before{
+  content:"";
+  position:absolute;
+  inset:auto -80px -100px auto;
+  width:260px;
+  height:260px;
+  border-radius:999px;
+  background:radial-gradient(circle, rgba(241,189,64,.22), transparent 72%);
+  pointer-events:none;
+}
+.panel.attendance-summary-panel .eyebrow,
+.panel.ro-summary-panel .eyebrow,
+.panel.attendance-summary-panel h3,
+.panel.ro-summary-panel h3,
+#activeMeetingTitle,#picketSessionSummary,
+.panel.attendance-summary-panel p,
+.panel.ro-summary-panel p,
+.panel.attendance-summary-panel span,
+.panel.ro-summary-panel span,
+.panel.attendance-summary-panel strong,
+.panel.ro-summary-panel strong{
+  color:#fff0c1 !important;
+  position:relative;
+  z-index:1;
+}
+.attendance-summary-grid,.ro-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.attendance-mini-card,.ro-mini-card{
+  min-height:138px;
+  border-radius:24px;
+  padding:20px 20px 18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border:1px solid rgba(241,189,64,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.attendance-mini-card span,.ro-mini-card span{
+  color:rgba(255,240,199,.78) !important;
+  font-size:15px;
+}
+.attendance-mini-card strong,.ro-mini-card strong{
+  color:#fff7df !important;
+  font-size:44px;
+  line-height:1;
+}
+.attendance-inline-select select,.ro-inline-select select{
+  background:rgba(255,255,255,.06) !important;
+  color:#fff7df !important;
+  border:1px solid rgba(241,189,64,.16) !important;
+}
+
+.attendance-page-grid,.ro-page-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:22px;
+  align-items:start;
+}
+
+.attendance-target-card,.ro-target-card{display:none !important;}
+.visually-hidden{
+  position:absolute !important;
+  width:1px;height:1px;margin:-1px;padding:0;border:0;
+  clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;
+}
+
+.attendance-camera-panel,.ro-camera-panel{
+  padding:22px;
+  border-radius:30px;
+  background:linear-gradient(180deg, rgba(255,252,246,.97), rgba(246,239,224,.92));
+  border:1px solid rgba(212,175,55,.16);
+  box-shadow:0 18px 42px rgba(8,17,32,.08);
+}
+.attendance-camera-stage,.ro-camera-stage{
+  position:relative;
+  aspect-ratio:4/5.1;
+  min-height:unset !important;
+  padding:18px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at center, rgba(241,189,64,.08), transparent 35%),
+    linear-gradient(180deg, #071a40 0%, #0b2557 100%);
+  border:1px solid rgba(241,189,64,.12);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.attendance-camera-stage::before,.ro-camera-stage::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:34px 34px;
+  opacity:.45;
+  pointer-events:none;
+}
+#cameraVideo{
+  display:block !important;
+  object-fit:cover;
+  transform:scaleX(-1);
+}
+.attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  width:min(58%,270px);
+  aspect-ratio:.78/1;
+  inset:auto;
+  border-radius:32px;
+  border:2px solid rgba(241,189,64,.42);
+  box-shadow:
+    0 0 0 1px rgba(241,189,64,.06),
+    inset 0 0 0 999px rgba(2,6,23,.12);
+}
+.attendance-camera-stage .scan-frame::before,.ro-camera-stage .scan-frame::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border-radius:24px;
+  border:2px dashed rgba(255,240,199,.24);
+}
+.attendance-camera-stage .scan-frame::after,.ro-camera-stage .scan-frame::after{
+  content:"";
+  position:absolute;
+  left:16%; right:16%; bottom:28%;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg, transparent, rgba(241,189,64,.88), transparent);
+  box-shadow:0 0 14px rgba(241,189,64,.24);
+}
+.attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{
+  position:absolute;
+  left:22px; right:22px; bottom:84px;
+  padding:18px 20px;
+  border-radius:22px;
+  background:rgba(3,10,24,.62);
+  border:1px solid rgba(241,189,64,.08);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  z-index:2;
+}
+.attendance-camera-stage .camera-empty-state strong,.ro-camera-stage .camera-empty-state strong{
+  display:block;
+  margin-bottom:8px;
+  color:#fff6dc;
+  font-size:18px;
+}
+.attendance-camera-stage .camera-empty-state span,.ro-camera-stage .camera-empty-state span{
+  color:rgba(255,241,208,.78);
+  font-size:15px;
+  line-height:1.6;
+}
+.attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{
+  position:absolute;
+  left:22px; right:22px; bottom:22px;
+  min-height:54px;
+  border-radius:999px;
+  background:rgba(4,10,22,.92);
+  border:1px solid rgba(241,189,64,.10);
+  color:#fff3d0;
+  z-index:3;
+}
+.attendance-camera-stage .camera-status-chip::before,.ro-camera-stage .camera-status-chip::before{
+  background:#fb7185;
+  box-shadow:0 0 0 6px rgba(251,113,133,.14);
+}
+.attendance-camera-stage.camera-live .camera-status-chip::before,.ro-camera-stage.camera-live .camera-status-chip::before{
+  background:#22c55e;
+  box-shadow:0 0 0 6px rgba(34,197,94,.16);
+}
+.attendance-camera-actions,.ro-camera-actions{
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:18px;
+}
+.attendance-camera-actions .btn,.ro-camera-actions .btn{
+  min-height:58px;
+  border-radius:20px;
+  font-size:17px;
+  font-weight:800;
+}
+.btn.btn-primary{
+  background:linear-gradient(135deg, #b8891d, #f1bd40);
+  color:#0f1e39;
+  box-shadow:0 16px 34px rgba(184,137,29,.18);
+}
+.btn.btn-ghost{
+  background:linear-gradient(180deg, rgba(255,252,247,.98), rgba(247,241,227,.94));
+  border:1px solid rgba(212,175,55,.16);
+  color:#1a2a49;
+}
+
+.ro-roster-panel,.ro-recent-panel{
+  padding:26px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,252,246,.98), rgba(248,241,228,.96));
+  border:1px solid rgba(212,175,55,.16);
+}
+.ro-tight-table{
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.14);
+}
+.ro-tight-table thead th{
+  background:rgba(248,240,219,.96);
+  color:#8a6b16;
+}
+.ro-tight-table tbody td{
+  padding-top:18px;
+  padding-bottom:18px;
+}
+.compact-text{color:#76859c}
+.pill.success{background:rgba(32,181,104,.12);color:#108652;border:1px solid rgba(16,134,82,.10)}
+.pill.danger{background:rgba(220,38,38,.10);color:#c43a3a;border:1px solid rgba(196,58,58,.12)}
+
+#meetingDetailList .btn,
+#meetingDetailList button{margin-top:4px}
+.timeline-card{
+  border-radius:26px;
+  padding:22px 22px 20px;
+  background:linear-gradient(135deg, rgba(255,251,244,.96), rgba(245,238,221,.95));
+  border:1px solid rgba(212,175,55,.16);
+}
+.timeline-card.active{
+  background:linear-gradient(135deg, rgba(6,20,46,.98), rgba(12,34,71,.94));
+}
+.timeline-card.active h3,
+.timeline-card.active p,
+.timeline-card.active small{color:#fff2c2 !important;}
+.timeline-card.active .pill{background:rgba(241,189,64,.16);color:#ffe7a0;border-color:rgba(241,189,64,.16)}
+
+@media (max-width: 980px){
+  .attendance-page-grid,.ro-page-grid{grid-template-columns:1fr;}
+  .detail-list{gap:16px;}
+  .detail-list > div{padding:22px 20px;}
+}
+
+@media (max-width: 720px){
+  .panel.attendance-summary-panel,.panel.ro-summary-panel{padding:20px 18px 18px;border-radius:28px}
+  .attendance-summary-grid,.ro-summary-grid{grid-template-columns:1fr;gap:12px}
+  .attendance-mini-card,.ro-mini-card{min-height:114px;padding:18px 16px}
+  .attendance-mini-card strong,.ro-mini-card strong{font-size:40px}
+  .attendance-camera-panel,.ro-camera-panel{padding:18px;border-radius:28px}
+  .attendance-camera-stage,.ro-camera-stage{aspect-ratio:4/5.35;padding:16px;border-radius:28px}
+  .attendance-camera-stage .scan-frame,.ro-camera-stage .scan-frame{width:min(62%,246px)}
+  .attendance-camera-stage .camera-empty-state,.ro-camera-stage .camera-empty-state{left:16px;right:16px;bottom:74px;padding:18px}
+  .attendance-camera-stage .camera-status-chip,.ro-camera-stage .camera-status-chip{left:16px;right:16px;bottom:16px}
+  .attendance-camera-actions,.ro-camera-actions{grid-template-columns:1fr}
+  .ro-roster-panel,.ro-recent-panel{padding:22px}
+}
+
+
+/* v32 overrides */
+.brand-logo-lockup{padding:10px 16px 10px 12px;border-radius:20px;display:flex;align-items:center;gap:12px;min-width:230px;background:linear-gradient(135deg, rgba(10,22,44,.96), rgba(16,36,70,.92));border:1px solid rgba(250,204,21,.14)}
+.brand-image{width:40px;height:40px;border-radius:12px}
+.brand-logo-lockup strong{font-size:12px;letter-spacing:.18em}
+.brand-logo-lockup small{font-size:9px;letter-spacing:.14em}
+.page-header.split{align-items:end}
+.timeline-grid{gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.timeline-card{min-height:unset;padding:20px 18px}
+.meeting-detail-grid{margin-top:18px}
+.in-rapat-panel{margin-top:18px}
+.meeting-week-chip,.week-label{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.08);color:#fff2c2;font-weight:700;font-size:13px;border:1px solid rgba(250,204,21,.18)}
+.field-inline{display:grid;gap:8px;margin-bottom:16px}.field-inline span{font-size:13px;font-weight:700;color:#e5d6a0}.field-inline select{min-height:48px;border-radius:16px;background:rgba(255,255,255,.92)}
+.roster-scroll-fix{max-height:420px;overflow:auto;-webkit-overflow-scrolling:touch}
+#attendanceRosterTable td,#roPicketRosterTable td{vertical-align:top}
+.day-chip-list{display:none;gap:10px;flex-wrap:wrap;margin:0 0 18px}.day-chip-list.is-open{display:flex}.day-chip{border:1px solid rgba(250,204,21,.18);background:rgba(255,255,255,.06);color:#fff2c2;border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer;transition:.18s ease}.day-chip.active{background:rgba(250,204,21,.18);box-shadow:0 10px 24px rgba(250,204,21,.12)}
+.subtitle-light{margin-top:8px;color:rgba(255,242,194,.74)!important}.rom-summary-panel .panel-head{align-items:start}
+
+
+/* v17 production polish */
+.week-browser-panel{padding:22px 24px;}
+.week-browser-panel .subtitle{margin-top:6px;}
+.week-chip-list{display:flex;gap:10px;overflow:auto;padding-bottom:2px;scrollbar-width:none;-ms-overflow-style:none}
+.week-chip-list::-webkit-scrollbar{display:none}
+.week-chip{display:grid;gap:4px;min-width:176px;padding:14px 16px;border-radius:18px;border:1px solid rgba(212,175,55,.14);background:linear-gradient(180deg, rgba(255,252,246,.98), rgba(248,244,235,.94));color:#182a4f;box-shadow:0 10px 24px rgba(8,17,32,.05);transition:.22s ease}
+.week-chip strong{font-size:.92rem}
+.week-chip span{font-size:.78rem;color:#7b6b45}
+.week-chip.active{background:linear-gradient(135deg, rgba(241,189,64,.24), rgba(184,137,29,.16));border-color:rgba(184,137,29,.22);transform:translateY(-1px);box-shadow:0 16px 28px rgba(184,137,29,.14)}
+.timeline-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.timeline-card-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.timeline-card-toggle,.timeline-card-delete{min-height:38px;padding:0 12px;border-radius:12px;font-size:.82rem;font-weight:700}
+.timeline-card-delete{border:1px solid rgba(220,38,38,.14);background:rgba(220,38,38,.06);color:#b42318}
+.member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:22px}
+.member-card{padding:20px 18px;border-radius:24px;border:1px solid rgba(212,175,55,.14);background:linear-gradient(180deg, rgba(255,252,246,.98), rgba(248,244,235,.94));box-shadow:0 16px 34px rgba(8,17,32,.06)}
+.member-card h3{margin:0 0 6px;color:#16284a}
+.member-meta{display:grid;gap:6px;color:#6d7d96;font-size:.88rem}
+@media (max-width:720px){.week-browser-panel{padding:18px}.week-chip{min-width:160px;padding:13px 14px}.timeline-card-actions{width:100%}.timeline-card-toggle,.timeline-card-delete{flex:1 1 auto}}
+
+/* v18 production palette refinements */
+body{
+  background:
+    radial-gradient(circle at top right, rgba(241,189,64,.12), transparent 22%),
+    radial-gradient(circle at top left, rgba(19,40,84,.08), transparent 24%),
+    linear-gradient(180deg,#f8f3e7 0%,#efe7d7 100%);
+}
+.panel,
+.timeline-card,
+.stat-card,
+.member-card,
+.week-browser-panel,
+.toolbar-panel,
+.camera-panel,
+.setting-item,
+.report-block,
+.table-wrap{
+  background:linear-gradient(180deg, rgba(255,249,239,.97), rgba(246,237,221,.94));
+  border-color:rgba(212,175,55,.16)!important;
+}
+.empty-state{
+  background:linear-gradient(180deg, rgba(255,250,242,.96), rgba(246,237,221,.92));
+  border:1px dashed rgba(212,175,55,.28);
+  color:#6a5d40;
+}
+.timeline-card p,
+.panel p,
+.compact-text,
+.subtitle,
+.setting-item span,
+.detail-list > div span,
+.activity-list span,
+.table-wrap td,
+.table-wrap th{color:#6f7488}
+.timeline-card h3,
+.panel h3,
+.page-header h1,
+.attendance-summary-head h3,
+.ro-summary-head h3,
+.detail-list > div strong{color:#14264a}
+.timeline-card.active,
+.week-chip.active,
+.day-chip.active{
+  box-shadow:0 20px 40px rgba(198,148,26,.12);
+}

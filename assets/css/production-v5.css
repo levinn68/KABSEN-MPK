@@ -1,0 +1,1384 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+:root{
+  --v5-bg:#07101f;
+  --v5-bg-2:#0d1830;
+  --v5-panel:#0f1a2f;
+  --v5-panel-2:#13213b;
+  --v5-panel-3:#162744;
+  --v5-border:rgba(226,184,73,.16);
+  --v5-border-strong:rgba(226,184,73,.32);
+  --v5-text:#eef3ff;
+  --v5-text-soft:rgba(233,240,255,.72);
+  --v5-text-dim:rgba(210,220,240,.56);
+  --v5-gold:#e2b849;
+  --v5-gold-2:#f1cf72;
+  --v5-danger:#f08a8a;
+  --v5-success:#68d391;
+}
+
+html,body{
+  font-family:"Plus Jakarta Sans","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  color:var(--v5-text) !important;
+}
+body{
+  background:
+    radial-gradient(circle at 14% 0%, rgba(49,82,180,.24), transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(226,184,73,.09), transparent 22%),
+    linear-gradient(180deg, #06101d 0%, #091424 38%, #0d1830 100%) !important;
+}
+body::after{background:rgba(226,184,73,.08)!important}
+
+.page-header h1,.topbar h1,.panel h3,.panel-head h3,.timeline-card h3,.member-identity h3,.stat-card strong,.setting-item strong,.camera-empty-state strong{
+  color:var(--v5-text) !important;
+  font-weight:800 !important;
+}
+.page-header .subtitle,.topbar .subtitle,.compact-text,.panel p,.setting-item span,.activity-list span,.timeline-card p,.timeline-card small,.search-box input::placeholder,textarea::placeholder,input::placeholder,select, .member-identity p{
+  color:var(--v5-text-soft) !important;
+}
+.eyebrow,.stat-label,.member-stat span,thead th,.week-chip span,.day-chip,.week-label,.meeting-week-chip{
+  color:#f4d78a !important;
+}
+
+.main-content{padding-top:16px !important;}
+.page-header,.topbar{padding-top:8px !important;}
+
+.panel,.stat-card,.toolbar-panel,.week-browser-panel,.timeline-card,.member-card,.camera-panel,.setting-item,.hero-panel,.sidebar-card,.attendance-camera-panel,.ro-camera-panel,.shortcut-card{
+  background:
+    linear-gradient(180deg, rgba(17,28,50,.92), rgba(12,20,36,.96)) !important;
+  border:1px solid var(--v5-border) !important;
+  box-shadow:0 16px 42px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.03) !important;
+}
+
+.table-wrap{
+  background:linear-gradient(180deg, rgba(15,25,46,.92), rgba(12,20,36,.96)) !important;
+  border:1px solid var(--v5-border) !important;
+  box-shadow:0 16px 38px rgba(0,0,0,.18) !important;
+}
+.table-wrap table{min-width:720px;}
+thead th{background:rgba(255,255,255,.04) !important; border-bottom:1px solid rgba(255,255,255,.06)!important;}
+tbody td{color:var(--v5-text) !important; border-color:rgba(255,255,255,.05)!important;}
+.text-link,.member-actions a{color:#8eb7ff !important; font-weight:700 !important;}
+
+.search-box input,
+.filters-inline select,
+#cashPaymentForm select,
+#cashPaymentForm textarea,
+#cashPaymentForm input,
+#cashFilters select,
+.field-inline select,
+.attendance-inline-select select,
+.ro-inline-select select,
+.app-modal input,
+.app-modal select,
+.app-modal textarea,
+label select,
+label textarea,
+label input{
+  min-height:56px;
+  border-radius:18px !important;
+  border:1px solid rgba(226,184,73,.18) !important;
+  background:linear-gradient(180deg, rgba(27,40,66,.96), rgba(17,28,50,.98)) !important;
+  color:var(--v5-text) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 8px 18px rgba(0,0,0,.12) !important;
+}
+#cashPaymentForm label,
+.form-grid label,
+.field-inline,
+.attendance-field-grid label,
+.ro-field-grid label,
+.app-modal label{
+  display:grid;
+  gap:10px;
+  padding:18px 18px 16px;
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.05);
+}
+#cashPaymentForm textarea,.app-modal textarea{min-height:146px;}
+select option{color:#0f172a;}
+
+.btn.btn-primary{
+  background:linear-gradient(135deg, #c9961f, #efcb69) !important;
+  color:#10203d !important;
+  box-shadow:0 14px 28px rgba(201,150,31,.24) !important;
+}
+.btn.btn-ghost,
+.timeline-card-toggle{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) !important;
+  color:var(--v5-text) !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+}
+.timeline-card-delete,.btn-danger-soft{background:rgba(220,38,38,.12)!important;border:1px solid rgba(248,113,113,.24)!important;color:#ffc4c4!important;}
+
+.hero-panel,.attendance-summary-panel,.ro-summary-panel{
+  background:linear-gradient(135deg, rgba(7,18,37,.98), rgba(10,26,58,.96) 55%, rgba(18,40,82,.96) 100%) !important;
+  color:var(--v5-text) !important;
+  border:1px solid rgba(226,184,73,.18) !important;
+}
+.hero-panel h2,.hero-panel p,.attendance-summary-panel h3,.attendance-summary-panel p,.attendance-summary-panel span,.attendance-summary-panel strong,.ro-summary-panel h3,.ro-summary-panel p,.ro-summary-panel span,.ro-summary-panel strong,#activeMeetingTitle,#picketSessionSummary,#romWeekLabel,#meetingWeekLabel{color:var(--v5-text)!important}
+.attendance-mini-card,.ro-mini-card,.metric-card,.hero-metrics .metric-card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02))!important;border:1px solid rgba(226,184,73,.1)!important}
+
+.timeline-card{
+  min-height:unset !important;
+  padding:22px 20px !important;
+}
+.timeline-card.active{
+  background:linear-gradient(135deg, rgba(201,150,31,.18), rgba(19,33,59,.98) 36%, rgba(15,27,48,.98)) !important;
+  border-color:var(--v5-border-strong) !important;
+  box-shadow:0 20px 48px rgba(0,0,0,.26), 0 0 0 1px rgba(226,184,73,.08) inset !important;
+}
+.timeline-card .pill{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.08)!important;color:#fff3c2!important}
+.timeline-card p,.timeline-card small,.timeline-card h3,.timeline-card span,.timeline-card strong{color:var(--v5-text)!important}
+.timeline-card small{display:block;margin-top:10px;color:var(--v5-text-soft)!important}
+.timeline-card-actions{display:flex;gap:8px;flex-wrap:wrap}
+.timeline-card-toggle,.timeline-card-delete{min-height:42px;border-radius:14px;font-weight:700}
+
+.member-card{padding:22px !important;}
+.member-card-top{align-items:start !important;}
+.member-stat{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.06)}
+.pill.success{background:rgba(50,185,120,.15)!important;color:#9be1b9!important;border:1px solid rgba(50,185,120,.2)!important}
+.pill.warning{background:rgba(226,184,73,.14)!important;color:#f4d78a!important;border:1px solid rgba(226,184,73,.18)!important}
+.pill.danger{background:rgba(240,138,138,.13)!important;color:#ffcccc!important;border:1px solid rgba(240,138,138,.18)!important}
+
+.attendance-camera-stage,.ro-camera-stage,.camera-stage{
+  aspect-ratio:4 / 3 !important;
+  min-height:0 !important;
+  height:auto !important;
+  border-radius:28px !important;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(226,184,73,.08), transparent 30%),
+    linear-gradient(180deg, #091323 0%, #10203b 100%) !important;
+  border:1px solid rgba(226,184,73,.14) !important;
+}
+.attendance-camera-stage video,.ro-camera-stage video,.camera-stage video{
+  object-fit:cover !important;
+}
+.scan-frame{
+  inset:14% 24% !important;
+  border-radius:28px !important;
+  border:2px solid rgba(226,184,73,.5) !important;
+}
+.scan-frame::before{inset:14px !important;border:1px dashed rgba(255,236,181,.26)!important}
+.scan-frame::after{left:14%;right:14%;top:18%;height:3px;background:linear-gradient(90deg, transparent, rgba(226,184,73,.98), transparent)!important;box-shadow:0 0 14px rgba(226,184,73,.32)!important}
+.camera-empty-state{
+  left:18px !important; right:18px !important; bottom:72px !important;
+  padding:18px 20px !important;
+  border-radius:20px !important;
+  background:linear-gradient(180deg, rgba(6,12,22,.78), rgba(7,15,28,.7)) !important;
+  border:1px solid rgba(226,184,73,.12) !important;
+  color:var(--v5-text) !important;
+}
+.camera-status-chip{
+  left:18px !important; right:18px !important; bottom:18px !important;
+  min-height:50px !important;
+  border-radius:16px !important;
+  background:rgba(6,12,22,.94) !important;
+  color:#ffe6e6 !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+  justify-content:center;
+  font-weight:700;
+}
+.camera-actions,.attendance-camera-actions,.ro-camera-actions{margin-top:18px!important}
+
+.week-chip-list,.day-chip-list{padding-bottom:6px}
+.week-chip,.day-chip{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) !important;
+  color:var(--v5-text) !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+}
+.week-chip strong,.day-chip strong,.day-chip{color:var(--v5-text)!important}
+.week-chip.active,.day-chip.active{
+  background:linear-gradient(135deg, rgba(226,184,73,.18), rgba(16,32,61,.96)) !important;
+  border-color:var(--v5-border-strong) !important;
+  box-shadow:0 10px 22px rgba(0,0,0,.18) !important;
+}
+
+.shortcut-card strong,.shortcut-card span,.setting-item strong,.setting-item span,.stat-card small,.stat-card .stat-label,.panel .subtitle,.compact-text,.week-label,.meeting-week-chip{color:var(--v5-text-soft)!important}
+.stat-card strong{font-size:2.2rem !important;}
+
+.activity-list li{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)) !important;
+  border:1px solid rgba(255,255,255,.05) !important;
+}
+.activity-list strong{color:var(--v5-text) !important;}
+
+#dashboardRecentPayments td:nth-child(2),
+#cashStatusTable td:nth-child(1),
+#cashStatusTable td:nth-child(2),
+#cashStatusTable td:nth-child(3),
+#attendanceRosterTable td,
+#roPicketRosterTable td{
+  white-space:nowrap;
+}
+#dashboardRecentPayments td:nth-child(2){min-width:220px;}
+
+.mobile-bottom-dock{bottom:20px !important;}
+.mobile-bottom-dock__inner{background:linear-gradient(180deg, rgba(8,12,22,.9), rgba(17,26,44,.84)) !important; border:1px solid rgba(226,184,73,.16)!important; box-shadow:0 20px 38px rgba(0,0,0,.28)!important}
+.mobile-bottom-dock__link{color:rgba(255,238,189,.82)!important}
+.mobile-bottom-dock__link.active{background:linear-gradient(180deg, rgba(226,184,73,.22), rgba(226,184,73,.12)) !important; color:#fff3c8 !important}
+.mobile-brandbar{background:linear-gradient(180deg, rgba(8,12,22,.96), rgba(17,26,44,.92)) !important; box-shadow:0 18px 40px rgba(0,0,0,.28)!important}
+
+@media (max-width:980px){
+  .app-shell,.compact-shell{margin-top:102px !important;}
+  .main-content{padding-top:10px !important; padding-bottom:114px !important;}
+  .page-header h1,.topbar h1{font-size:2.3rem!important;}
+}
+@media (max-width:720px){
+  .page-header h1,.topbar h1{font-size:2.1rem!important; line-height:1.06!important;}
+  .attendance-camera-stage,.ro-camera-stage,.camera-stage{aspect-ratio:4 / 3 !important;}
+  .scan-frame{inset:13% 21% !important;}
+  .camera-empty-state{bottom:68px!important}
+  .mobile-bottom-dock{bottom:18px !important; width:min(84vw,352px)!important;}
+}
+@media (max-width:480px){
+  .page-header h1,.topbar h1{font-size:1.95rem!important;}
+  .member-actions{gap:12px!important}
+  .camera-actions,.attendance-camera-actions,.ro-camera-actions{grid-template-columns:1fr!important}
+}
+
+
+/* v5.1 final polish overrides */
+.stat-card .stat-label,
+.metric-card span,
+.hero-metrics .metric-card span,
+.panel-head .eyebrow,
+.shortcut-card strong,
+.field-inline span,
+#cashPaymentForm label > span,
+.form-grid label > span,
+.toolbar-panel label > span,
+.attendance-summary-head .eyebrow,
+.ro-summary-head .eyebrow{
+  color:var(--v5-gold-2) !important;
+}
+
+.week-browser-panel,
+.panel.week-browser-panel{
+  padding-top:26px !important;
+  overflow:visible !important;
+}
+#cashWeekChipList,
+#romWeekChipList,
+#romDayChipList{
+  margin-top:8px !important;
+  padding-top:6px !important;
+}
+.panel-head.split-wrap,
+.panel-head.attendance-summary-head,
+.panel-head.ro-summary-head{
+  align-items:flex-start !important;
+  gap:16px !important;
+}
+.filters-inline,
+#cashFilters{
+  gap:14px !important;
+  align-self:flex-start !important;
+}
+#cashFilters{
+  margin-top:10px !important;
+}
+.toolbar-panel{
+  gap:18px !important;
+}
+.filters-inline select,
+#cashFilters select,
+#memberActiveFilter,
+#memberSortFilter,
+#cashWeekFilter,
+#cashStatusFilter,
+#attendanceMeetingId,
+#roPicketSessionId{
+  border-color:rgba(226,184,73,.28) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 10px 22px rgba(0,0,0,.14) !important;
+}
+
+.attendance-camera-stage,
+.ro-camera-stage,
+.camera-stage{
+  aspect-ratio:3 / 4 !important;
+  min-height:min(78vh, 760px) !important;
+  padding:24px !important;
+  display:grid !important;
+  place-items:center !important;
+}
+.attendance-camera-stage .scan-frame,
+.ro-camera-stage .scan-frame,
+.camera-stage .scan-frame{
+  position:absolute !important;
+  inset:auto !important;
+  width:min(68%, 320px) !important;
+  aspect-ratio:3 / 4 !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%, -50%) !important;
+  border-radius:30px !important;
+}
+.attendance-camera-stage .scan-frame::before,
+.ro-camera-stage .scan-frame::before,
+.camera-stage .scan-frame::before{
+  inset:16px !important;
+  border-radius:22px !important;
+}
+.attendance-camera-stage .scan-frame::after,
+.ro-camera-stage .scan-frame::after,
+.camera-stage .scan-frame::after{
+  left:12% !important;
+  right:12% !important;
+  top:50% !important;
+  bottom:auto !important;
+  transform:translateY(-50%) !important;
+  height:3px !important;
+}
+.camera-overlay{
+  display:grid !important;
+  place-items:center !important;
+}
+.camera-empty-state{
+  left:20px !important;
+  right:20px !important;
+  bottom:84px !important;
+}
+.camera-status-chip{
+  left:20px !important;
+  right:20px !important;
+  bottom:20px !important;
+}
+
+#meetingDetailList.detail-list{
+  gap:14px !important;
+}
+#meetingDetailList.detail-list > div{
+  background:linear-gradient(180deg, rgba(16,28,52,.96), rgba(10,18,34,.98)) !important;
+  border:1px solid rgba(226,184,73,.14) !important;
+  box-shadow:0 14px 28px rgba(0,0,0,.18) !important;
+}
+#meetingDetailList.detail-list > div span{
+  color:#f4d78a !important;
+}
+#meetingDetailList.detail-list > div strong{
+  color:var(--v5-text) !important;
+}
+
+.roster-scroll-fix,
+.ro-tight-table,
+.ro-roster-panel .table-wrap{
+  overflow-x:hidden !important;
+}
+.ro-roster-panel .table-wrap table,
+#attendanceRosterTable,
+#roPicketRosterTable{
+  width:100% !important;
+  min-width:100% !important;
+  table-layout:fixed !important;
+}
+.ro-roster-panel th:nth-child(1),
+.ro-roster-panel td:nth-child(1){width:40% !important;}
+.ro-roster-panel th:nth-child(2),
+.ro-roster-panel td:nth-child(2){width:26% !important;}
+.ro-roster-panel th:nth-child(3),
+.ro-roster-panel td:nth-child(3){width:34% !important;}
+#attendanceRosterTable td,
+#roPicketRosterTable td{
+  white-space:normal !important;
+  word-break:break-word !important;
+  vertical-align:middle !important;
+}
+.scan-datetime{
+  display:grid;
+  gap:4px;
+  line-height:1.25;
+}
+.scan-date{
+  color:var(--v5-text) !important;
+  font-weight:700;
+}
+.scan-time{
+  color:var(--v5-text-soft) !important;
+  font-size:.86rem;
+}
+.scan-datetime-empty{
+  color:var(--v5-text-soft) !important;
+}
+
+.day-chip,
+.week-chip{
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease !important;
+}
+.day-chip{
+  margin-top:2px !important;
+}
+.day-chip.active,
+.week-chip.active{
+  background:linear-gradient(135deg, rgba(241,207,114,.98), rgba(214,164,45,.92)) !important;
+  border-color:rgba(255,233,165,.72) !important;
+  color:#10203d !important;
+  box-shadow:0 14px 26px rgba(201,150,31,.22) !important;
+}
+.day-chip.active,
+.day-chip.active strong,
+.day-chip.active span,
+.week-chip.active,
+.week-chip.active strong,
+.week-chip.active span{
+  color:#10203d !important;
+}
+.day-chip:not(.active),
+.week-chip:not(.active){
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)) !important;
+}
+.day-chip:hover,
+.week-chip:hover{
+  transform:translateY(-1px) !important;
+}
+
+.toolbar-panel,
+.member-card,
+#memberGrid + .panel,
+#memberGrid .member-card{
+  background:linear-gradient(180deg, rgba(19,31,56,.94), rgba(11,20,37,.98)) !important;
+}
+#memberGrid .member-card h3,
+#memberTableBody td,
+#memberTableBody .text-link,
+#memberGrid .member-stat strong,
+#memberGrid .member-actions a{
+  color:var(--v5-text) !important;
+}
+#memberGrid .member-identity p,
+#memberGrid .member-stat span,
+#memberTableBody td:nth-child(2),
+#memberTableBody td:nth-child(4){
+  color:var(--v5-text-soft) !important;
+}
+#memberGrid .avatar-circle{
+  background:linear-gradient(135deg, rgba(226,184,73,.28), rgba(61,102,214,.34)) !important;
+  color:#fff7dd !important;
+}
+#memberTableBody .text-link{
+  color:#9ec3ff !important;
+}
+
+@media (max-width:720px){
+  .attendance-camera-stage,
+  .ro-camera-stage,
+  .camera-stage{
+    aspect-ratio:3 / 4 !important;
+    min-height:560px !important;
+    padding:18px !important;
+  }
+  .attendance-camera-stage .scan-frame,
+  .ro-camera-stage .scan-frame,
+  .camera-stage .scan-frame{
+    width:min(74%, 286px) !important;
+  }
+  .camera-empty-state{
+    left:16px !important;
+    right:16px !important;
+    bottom:78px !important;
+  }
+  .camera-status-chip{
+    left:16px !important;
+    right:16px !important;
+    bottom:16px !important;
+  }
+  .ro-roster-panel th:nth-child(1),
+  .ro-roster-panel td:nth-child(1){width:38% !important;}
+  .ro-roster-panel th:nth-child(2),
+  .ro-roster-panel td:nth-child(2){width:26% !important;}
+  .ro-roster-panel th:nth-child(3),
+  .ro-roster-panel td:nth-child(3){width:36% !important;}
+}
+
+
+/* v5.2 camera + viewport refinement */
+html,body{
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+.app-shell,.compact-shell,.main-content,.page-header,.panel,.camera-panel,.table-wrap{
+  max-width:100%;
+}
+.mobile-brandbar{
+  overflow:hidden !important;
+}
+.mobile-brandbar__home{
+  min-width:0 !important;
+  max-width:calc(100% - 60px) !important;
+}
+.mobile-brandbar__text{
+  min-width:0 !important;
+  overflow:hidden !important;
+}
+.mobile-brandbar__text strong,
+.mobile-brandbar__text small{
+  display:block !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+}
+
+.attendance-camera-stage,
+.ro-camera-stage,
+.camera-stage{
+  overflow:hidden !important;
+}
+.attendance-camera-stage .scan-frame,
+.ro-camera-stage .scan-frame,
+.camera-stage .scan-frame{
+  overflow:hidden !important;
+  animation:framePulse 2.5s ease-in-out infinite !important;
+}
+.attendance-camera-stage .scan-frame::after,
+.ro-camera-stage .scan-frame::after,
+.camera-stage .scan-frame::after{
+  top:22% !important;
+  animation:cameraSweep 2.2s ease-in-out infinite alternate, scanGlow 1.4s ease-in-out infinite !important;
+}
+.attendance-camera-stage .camera-empty-state,
+.ro-camera-stage .camera-empty-state,
+.camera-stage .camera-empty-state{
+  left:50% !important;
+  right:auto !important;
+  width:min(calc(100% - 44px), 360px) !important;
+  transform:translateX(-50%) !important;
+  padding:14px 16px !important;
+  border-radius:18px !important;
+  bottom:86px !important;
+}
+.attendance-camera-stage .camera-empty-state strong,
+.ro-camera-stage .camera-empty-state strong,
+.camera-stage .camera-empty-state strong{
+  margin-bottom:6px !important;
+  font-size:16px !important;
+}
+.attendance-camera-stage .camera-empty-state span,
+.ro-camera-stage .camera-empty-state span,
+.camera-stage .camera-empty-state span{
+  font-size:13px !important;
+  line-height:1.45 !important;
+}
+#attendanceRosterTable td:first-child,
+#attendanceRosterTable th:first-child,
+#roPicketRosterTable td:first-child,
+#roPicketRosterTable th:first-child{
+  padding-left:18px !important;
+}
+#attendanceRosterTable td,
+#roPicketRosterTable td{
+  text-align:left !important;
+}
+body[data-page="kas"] .table-wrap{
+  max-width:100% !important;
+  overflow-x:auto !important;
+  overscroll-behavior-x:contain;
+}
+body[data-page="kas"] .table-wrap table{
+  min-width:680px !important;
+}
+body[data-page="kas"] .week-chip-list,
+body[data-page="kas"] #cashFilters,
+body[data-page="kas"] .stats-grid,
+body[data-page="kas"] .content-grid{
+  min-width:0 !important;
+}
+
+@keyframes cameraSweep{
+  from{top:22%; opacity:.42;}
+  to{top:78%; opacity:1;}
+}
+@keyframes scanGlow{
+  0%,100%{box-shadow:0 0 10px rgba(241,189,64,.18);}
+  50%{box-shadow:0 0 22px rgba(241,189,64,.32);}
+}
+@keyframes framePulse{
+  0%,100%{box-shadow:0 0 0 1px rgba(241,189,64,.06), inset 0 0 0 999px rgba(2,6,23,.12);}
+  50%{box-shadow:0 0 0 1px rgba(241,189,64,.12), 0 0 20px rgba(241,189,64,.12), inset 0 0 0 999px rgba(2,6,23,.08);}
+}
+
+@media (max-width:720px){
+  .attendance-camera-stage .camera-empty-state,
+  .ro-camera-stage .camera-empty-state,
+  .camera-stage .camera-empty-state{
+    width:min(calc(100% - 32px), 320px) !important;
+    bottom:78px !important;
+    padding:12px 14px !important;
+  }
+  .attendance-camera-stage .camera-empty-state strong,
+  .ro-camera-stage .camera-empty-state strong,
+  .camera-stage .camera-empty-state strong{
+    font-size:15px !important;
+  }
+  .attendance-camera-stage .camera-empty-state span,
+  .ro-camera-stage .camera-empty-state span,
+  .camera-stage .camera-empty-state span{
+    font-size:12.5px !important;
+  }
+  #attendanceRosterTable td:first-child,
+  #attendanceRosterTable th:first-child,
+  #roPicketRosterTable td:first-child,
+  #roPicketRosterTable th:first-child{
+    padding-left:20px !important;
+  }
+  body[data-page="kas"] .table-wrap table{
+    min-width:620px !important;
+  }
+}
+
+/* === KABSEN FIX PATCH === */
+body[data-page="dashboard"] .hero-panel{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(243,194,78,.16), transparent 28%),
+    radial-gradient(circle at 82% 20%, rgba(125,164,255,.12), transparent 30%),
+    linear-gradient(135deg, rgba(11,20,38,.98) 0%, rgba(18,33,61,.96) 48%, rgba(15,26,48,.98) 100%) !important;
+  border:1px solid rgba(232,191,84,.18) !important;
+  box-shadow:0 24px 50px rgba(5,10,22,.26) !important;
+}
+body[data-page="dashboard"] .hero-panel::before{
+  background:radial-gradient(circle at 24% 22%, rgba(241,198,77,.14), transparent 26%), radial-gradient(circle at 78% 24%, rgba(110,147,255,.1), transparent 28%) !important;
+  opacity:1 !important;
+}
+body[data-page="dashboard"] .hero-panel .pill.primary{
+  background:rgba(241,198,77,.14) !important;
+  border-color:rgba(241,198,77,.22) !important;
+  color:#ffe9ab !important;
+}
+
+body[data-page="kas"] .cash-status-only{
+  justify-content:flex-end !important;
+}
+body[data-page="kas"] #cashStatusFilter{
+  min-width:180px !important;
+}
+body[data-page="kas"] .table-wrap{
+  overflow-x:hidden !important;
+}
+body[data-page="kas"] .table-wrap table{
+  width:100% !important;
+  min-width:100% !important;
+  table-layout:fixed !important;
+}
+body[data-page="kas"] thead th:nth-child(1),
+body[data-page="kas"] tbody td:nth-child(1){width:22% !important;}
+body[data-page="kas"] thead th:nth-child(2),
+body[data-page="kas"] tbody td:nth-child(2){width:14% !important;}
+body[data-page="kas"] thead th:nth-child(3),
+body[data-page="kas"] tbody td:nth-child(3){width:14% !important;}
+body[data-page="kas"] thead th:nth-child(4),
+body[data-page="kas"] tbody td:nth-child(4),
+body[data-page="kas"] thead th:nth-child(5),
+body[data-page="kas"] tbody td:nth-child(5),
+body[data-page="kas"] thead th:nth-child(6),
+body[data-page="kas"] tbody td:nth-child(6){width:14% !important;}
+body[data-page="kas"] thead th:nth-child(7),
+body[data-page="kas"] tbody td:nth-child(7){width:22% !important;}
+body[data-page="kas"] #cashStatusTable td,
+body[data-page="kas"] #cashStatusTable th{
+  white-space:normal !important;
+  word-break:break-word !important;
+  vertical-align:middle !important;
+}
+
+body[data-page="rapat"] .attendance-camera-stage,
+body[data-page="piket-rom"] .ro-camera-stage,
+body[data-page="piket-ro"] .ro-camera-stage{
+  aspect-ratio:3 / 4 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  inset:11% 17% !important;
+  border-radius:30px !important;
+  border:2px solid rgba(241,198,77,.58) !important;
+  box-shadow:0 0 0 1px rgba(241,198,77,.08), inset 0 0 0 999px rgba(1,7,19,.1) !important;
+  animation:framePulseSoft 2.8s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame::before,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame::before,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame::before{
+  inset:16px !important;
+  border:1px dashed rgba(255,233,165,.24) !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame::after,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame::after,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame::after{
+  left:12% !important;
+  right:12% !important;
+  top:16% !important;
+  height:2px !important;
+  border-radius:999px !important;
+  background:linear-gradient(90deg, transparent, rgba(255,229,145,.98), rgba(241,198,77,.98), transparent) !important;
+  box-shadow:0 0 18px rgba(241,198,77,.3) !important;
+  animation:cameraSweepSoft 2.45s ease-in-out infinite, scanGlowSoft 1.4s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  width:min(calc(100% - 54px), 300px) !important;
+  bottom:96px !important;
+  padding:12px 14px !important;
+  border-radius:18px !important;
+  background:linear-gradient(180deg, rgba(7,14,28,.86), rgba(8,15,29,.76)) !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:15px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:12px !important;
+  line-height:1.42 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-status-chip,
+body[data-page="piket-rom"] .ro-camera-stage .camera-status-chip,
+body[data-page="piket-ro"] .ro-camera-stage .camera-status-chip{
+  bottom:22px !important;
+  min-height:48px !important;
+}
+
+#attendanceRosterTable td:first-child,
+#attendanceRosterTable th:first-child{
+  padding-left:22px !important;
+}
+
+.admin-shell{
+  grid-template-columns:1fr !important;
+}
+.admin-grid{
+  align-items:start !important;
+}
+.admin-download-grid{
+  display:grid;
+  gap:14px;
+}
+.admin-status-note{
+  margin-top:14px;
+  padding:14px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  color:var(--v5-text-soft);
+}
+.admin-status-note.success{
+  background:rgba(34,197,94,.1);
+  border-color:rgba(34,197,94,.2);
+  color:#d8ffe6;
+}
+.admin-status-note.error{
+  background:rgba(239,68,68,.1);
+  border-color:rgba(239,68,68,.18);
+  color:#ffd6d6;
+}
+
+@keyframes cameraSweepSoft{
+  0%{top:16%; opacity:.4;}
+  50%{top:50%; opacity:1;}
+  100%{top:84%; opacity:.6;}
+}
+@keyframes scanGlowSoft{
+  0%,100%{box-shadow:0 0 10px rgba(241,189,64,.16);}
+  50%{box-shadow:0 0 22px rgba(241,189,64,.28);}
+}
+@keyframes framePulseSoft{
+  0%,100%{box-shadow:0 0 0 1px rgba(241,198,77,.06), inset 0 0 0 999px rgba(1,7,19,.12);}
+  50%{box-shadow:0 0 0 1px rgba(241,198,77,.12), 0 0 20px rgba(241,198,77,.1), inset 0 0 0 999px rgba(1,7,19,.08);}
+}
+
+@media (max-width:720px){
+  body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+  body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+  body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+    width:min(calc(100% - 40px), 280px) !important;
+    bottom:90px !important;
+    padding:11px 13px !important;
+  }
+  body[data-page="kas"] thead th,
+  body[data-page="kas"] tbody td{
+    font-size:.9rem !important;
+  }
+}
+
+
+/* === final mobile polish patch === */
+body[data-page="dashboard"] .mobile-brandbar__home,
+body[data-page="dashboard"] .nav-link[href="./dashboard.html"],
+body[data-page="dashboard"] .mobile-bottom-dock__link[href="./dashboard.html"]{
+  scroll-margin-top: 0;
+}
+
+body[data-page="piket-rom"] #btnToggleRomDays,
+body[data-page="piket-ro"] #btnToggleRomDays{
+  display:none !important;
+}
+
+body[data-page="piket-rom"] #romDayChipList,
+body[data-page="piket-ro"] #romDayChipList{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  grid-template-rows:repeat(3, minmax(0, auto));
+  grid-auto-flow:column;
+  gap:12px !important;
+  margin-top:16px !important;
+  overflow:visible !important;
+}
+body[data-page="piket-rom"] #romDayChipList .day-chip,
+body[data-page="piket-ro"] #romDayChipList .day-chip{
+  width:100% !important;
+  min-height:56px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:left !important;
+  padding:0 18px !important;
+}
+
+body[data-page="kas"] #cashWeekChipList{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px !important;
+  overflow:visible !important;
+}
+body[data-page="kas"] #cashWeekChipList .week-chip{
+  min-width:0 !important;
+  width:100% !important;
+}
+
+body[data-page="kas"] .table-wrap{
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  -webkit-overflow-scrolling:touch;
+}
+body[data-page="kas"] .table-wrap table{
+  width:max-content !important;
+  min-width:760px !important;
+  table-layout:auto !important;
+}
+body[data-page="kas"] #cashStatusTable td,
+body[data-page="kas"] #cashStatusTable th,
+body[data-page="kas"] .table-wrap td,
+body[data-page="kas"] .table-wrap th{
+  white-space:nowrap !important;
+  word-break:normal !important;
+}
+body[data-page="kas"] #cashStatusTable td:nth-child(1),
+body[data-page="kas"] #cashStatusTable th:nth-child(1){
+  min-width:140px !important;
+}
+body[data-page="kas"] #cashStatusTable td:nth-child(7),
+body[data-page="kas"] #cashStatusTable th:nth-child(7){
+  min-width:118px !important;
+}
+
+body[data-page="kas"] #cashPaymentForm select,
+body[data-page="kas"] #cashFilters select,
+body[data-page="anggota"] .filters-inline select,
+body[data-page="rapat"] #attendanceMeetingId{
+  padding-right:64px !important;
+  background-position:right 22px center !important;
+}
+
+body[data-page="rapat"] #attendanceRosterTable th:first-child,
+body[data-page="rapat"] #attendanceRosterTable td:first-child,
+body[data-page="piket-rom"] #roPicketRosterTable th:first-child,
+body[data-page="piket-rom"] #roPicketRosterTable td:first-child,
+body[data-page="piket-ro"] #roPicketRosterTable th:first-child,
+body[data-page="piket-ro"] #roPicketRosterTable td:first-child{
+  padding-left:28px !important;
+}
+body[data-page="rapat"] #attendanceRosterTable td,
+body[data-page="rapat"] #attendanceRosterTable th,
+body[data-page="piket-rom"] #roPicketRosterTable td,
+body[data-page="piket-rom"] #roPicketRosterTable th,
+body[data-page="piket-ro"] #roPicketRosterTable td,
+body[data-page="piket-ro"] #roPicketRosterTable th{
+  text-align:left !important;
+}
+
+body[data-page="rapat"] .attendance-camera-stage,
+body[data-page="piket-rom"] .ro-camera-stage,
+body[data-page="piket-ro"] .ro-camera-stage{
+  position:relative !important;
+  overflow:hidden !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  left:50% !important;
+  top:50% !important;
+  right:auto !important;
+  bottom:auto !important;
+  width:min(62%, 286px) !important;
+  aspect-ratio:3 / 4 !important;
+  transform:translate(-50%, -50%) !important;
+  border-radius:30px !important;
+  animation:framePulseSoft 2.8s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame::before,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame::before,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame::before{
+  inset:16px !important;
+  border-radius:22px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame::after,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame::after,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame::after{
+  left:14% !important;
+  right:14% !important;
+  top:20% !important;
+  bottom:auto !important;
+  transform:none !important;
+  height:2px !important;
+  animation:cameraSweepCentered 2.25s ease-in-out infinite alternate, scanGlow 1.5s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  width:min(calc(100% - 54px), 330px) !important;
+  left:50% !important;
+  right:auto !important;
+  bottom:80px !important;
+  transform:translateX(-50%) !important;
+  padding:12px 14px !important;
+  border-radius:18px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:14px !important;
+  margin-bottom:4px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:11.5px !important;
+  line-height:1.38 !important;
+}
+
+.admin-download-panel[hidden]{
+  display:none !important;
+}
+
+@keyframes cameraSweepCentered{
+  from{ top:20%; opacity:.46; }
+  to{ top:78%; opacity:1; }
+}
+
+@media (max-width: 720px){
+  body[data-page="kas"] #cashWeekChipList{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+  body[data-page="kas"] .table-wrap table{
+    min-width:720px !important;
+  }
+  body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+  body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+  body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+    width:min(66%, 248px) !important;
+  }
+  body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+  body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+  body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+    width:min(calc(100% - 34px), 286px) !important;
+    bottom:74px !important;
+    padding:11px 13px !important;
+  }
+  body[data-page="piket-rom"] #romDayChipList,
+  body[data-page="piket-ro"] #romDayChipList{
+    gap:10px !important;
+  }
+}
+
+
+/* v20260418d actual fixes */
+label select,
+.form-grid select,
+.filters-inline select,
+.search-box select,
+#cashPaymentForm select,
+#cashFilters select,
+.field-inline select,
+.attendance-inline-select select,
+.ro-inline-select select,
+.app-modal select,
+#memberActiveFilter,
+#memberSortFilter,
+#attendanceMeetingId,
+#cashWeekFilter,
+#cashStatusFilter,
+#paymentCycleSelect,
+#paymentMemberId {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 58px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23e9d59a' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 18px center !important;
+  background-size: 16px 16px !important;
+}
+
+body[data-page="kas"] #cashWeekChipList{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  gap:12px !important;
+  overflow:visible !important;
+}
+body[data-page="kas"] #cashWeekChipList .week-chip{
+  min-width:0 !important;
+  width:100% !important;
+}
+@media (max-width:720px){
+  body[data-page="kas"] #cashWeekChipList{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+body[data-page="rapat"] .attendance-camera-stage,
+body[data-page="piket-rom"] .ro-camera-stage,
+body[data-page="piket-ro"] .ro-camera-stage{
+  position:relative !important;
+  overflow:hidden !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  width:min(62%, 286px) !important;
+  aspect-ratio:3 / 4 !important;
+  transform:translate(-50%, -50%) !important;
+  border-radius:30px !important;
+  overflow:hidden !important;
+  animation:framePulseSoft 2.8s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame .scan-line,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame .scan-line,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame .scan-line{
+  position:absolute !important;
+  left:12% !important;
+  right:12% !important;
+  top:12% !important;
+  height:3px !important;
+  border-radius:999px !important;
+  background:linear-gradient(90deg, transparent, rgba(255,229,145,.98), rgba(241,198,77,.98), transparent) !important;
+  box-shadow:0 0 18px rgba(241,198,77,.34) !important;
+  animation:scanLineTravel 2.2s ease-in-out infinite alternate !important;
+  z-index:3 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame::after,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame::after,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame::after{
+  display:none !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  width:min(calc(100% - 56px), 290px) !important;
+  left:50% !important;
+  right:auto !important;
+  transform:translateX(-50%) !important;
+  bottom:82px !important;
+  padding:11px 13px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:14px !important;
+  margin-bottom:4px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:11.5px !important;
+  line-height:1.4 !important;
+}
+@keyframes scanLineTravel{
+  0%{ top:14%; opacity:.46; }
+  50%{ top:50%; opacity:1; }
+  100%{ top:84%; opacity:.7; }
+}
+
+#attendanceRosterTable th:first-child,
+#attendanceRosterTable td:first-child{
+  padding-left:24px !important;
+}
+
+.admin-download-grid{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+}
+
+
+/* final fix: cash week strip + unpaid label + live scan */
+.week-chip-list{
+  display:flex !important;
+  gap:12px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  flex-wrap:nowrap !important;
+  -webkit-overflow-scrolling:touch !important;
+  scroll-snap-type:x proximity;
+  padding-bottom:4px !important;
+}
+.week-chip-list .week-chip{
+  flex:0 0 176px !important;
+  min-width:176px !important;
+  scroll-snap-align:start;
+}
+#cashWeekChipList{
+  display:flex !important;
+  gap:12px !important;
+  overflow-x:auto !important;
+  flex-wrap:nowrap !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+#cashWeekChipList .week-chip{
+  flex:0 0 176px !important;
+  min-width:176px !important;
+}
+.cash-status-stack{
+  display:grid;
+  gap:6px;
+  align-items:start;
+}
+.cash-status-note{
+  display:inline-block;
+  color:#f4c64d;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.attendance-camera-stage .scan-frame,
+.ro-camera-stage .scan-frame{
+  position:absolute !important;
+  top:50% !important;
+  left:50% !important;
+  transform:translate(-50%, -50%) !important;
+  overflow:hidden !important;
+}
+.attendance-camera-stage .scan-frame .scan-line,
+.ro-camera-stage .scan-frame .scan-line{
+  position:absolute !important;
+  left:10% !important;
+  right:10% !important;
+  top:14% !important;
+  height:3px !important;
+  display:block !important;
+  border-radius:999px !important;
+  background:linear-gradient(90deg, transparent 0%, rgba(255,232,154,.98) 50%, transparent 100%) !important;
+  box-shadow:0 0 18px rgba(241,198,77,.38) !important;
+  animation:scanLineTravelFix 1.9s ease-in-out infinite alternate !important;
+  z-index:6 !important;
+  will-change:transform;
+}
+.attendance-camera-stage .scan-frame::after,
+.ro-camera-stage .scan-frame::after{
+  display:none !important;
+}
+.attendance-camera-stage .camera-empty-state,
+.ro-camera-stage .camera-empty-state{
+  width:min(calc(100% - 54px), 286px) !important;
+  left:50% !important;
+  right:auto !important;
+  transform:translateX(-50%) !important;
+  bottom:82px !important;
+  padding:11px 13px !important;
+}
+.attendance-camera-stage .camera-empty-state strong,
+.ro-camera-stage .camera-empty-state strong{
+  font-size:14px !important;
+  line-height:1.25 !important;
+}
+.attendance-camera-stage .camera-empty-state span,
+.ro-camera-stage .camera-empty-state span{
+  font-size:12.5px !important;
+  line-height:1.5 !important;
+}
+@keyframes scanLineTravelFix{
+  0%{ transform:translateY(0); opacity:.82; }
+  100%{ transform:translateY(188px); opacity:1; }
+}
+
+
+/* v6 live camera + note spacing */
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  isolation:isolate !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame .scan-line,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame .scan-line,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame .scan-line{
+  display:block !important;
+  position:absolute !important;
+  left:11% !important;
+  right:11% !important;
+  top:12% !important;
+  height:4px !important;
+  border-radius:999px !important;
+  background:linear-gradient(90deg, rgba(255,232,154,0) 0%, rgba(255,232,154,.96) 25%, rgba(241,198,77,1) 50%, rgba(255,232,154,.96) 75%, rgba(255,232,154,0) 100%) !important;
+  box-shadow:0 0 18px rgba(241,198,77,.42), 0 0 28px rgba(241,198,77,.18) !important;
+  animation:scanLineTopOnly 1.55s linear infinite !important;
+  z-index:10 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  width:min(calc(100% - 66px), 272px) !important;
+  bottom:106px !important;
+  padding:12px 14px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:13px !important;
+  margin-bottom:6px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:11.5px !important;
+  line-height:1.42 !important;
+}
+@keyframes scanLineTopOnly{
+  0%{ top:12%; opacity:.88; }
+  50%{ top:49%; opacity:1; }
+  100%{ top:84%; opacity:.9; }
+}
+
+
+/* v7 fixes: persistent cash payment mapping + visible camera scan line */
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  top:44% !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  bottom:78px !important;
+  width:min(calc(100% - 72px), 268px) !important;
+  padding:10px 12px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:13px !important;
+  margin-bottom:6px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:11px !important;
+  line-height:1.4 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame .scan-line,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame .scan-line,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame .scan-line{
+  display:block !important;
+  position:absolute !important;
+  left:10% !important;
+  right:10% !important;
+  top:12px !important;
+  height:4px !important;
+  border-radius:999px !important;
+  z-index:10 !important;
+  opacity:1 !important;
+  background:linear-gradient(90deg, transparent 0%, rgba(255,232,154,.2) 8%, rgba(255,232,154,.98) 50%, rgba(255,232,154,.2) 92%, transparent 100%) !important;
+  box-shadow:0 0 10px rgba(255,232,154,.55), 0 0 18px rgba(241,198,77,.42) !important;
+  animation:scanLineVerticalV7 1.5s linear infinite alternate !important;
+}
+@keyframes scanLineVerticalV7{
+  0%{ top:12px; opacity:.88; }
+  100%{ top:calc(100% - 16px); opacity:1; }
+}
+
+
+.admin-fixed-range{display:grid;gap:6px;padding:18px 20px;border-radius:22px;background:linear-gradient(180deg,rgba(21,35,63,.92),rgba(13,25,48,.96));border:1px solid rgba(246,198,70,.12);color:#fff3cb}
+.admin-fixed-range strong{font-size:1rem;font-weight:800;color:#f6d77a}
+.admin-fixed-range span{color:rgba(255,244,212,.78);line-height:1.6}
+
+
+/* v8 final cash persistence + camera motion */
+body[data-page="rapat"] .attendance-camera-stage .scan-frame,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame{
+  --scan-travel: calc(100% - 48px);
+  top:42% !important;
+  overflow:hidden !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .scan-frame .scan-line,
+body[data-page="piket-rom"] .ro-camera-stage .scan-frame .scan-line,
+body[data-page="piket-ro"] .ro-camera-stage .scan-frame .scan-line{
+  display:block !important;
+  position:absolute !important;
+  left:12% !important;
+  right:12% !important;
+  top:18px !important;
+  height:4px !important;
+  border-radius:999px !important;
+  z-index:12 !important;
+  background:linear-gradient(90deg, rgba(255,229,140,0) 0%, rgba(255,229,140,.28) 15%, rgba(255,239,186,1) 50%, rgba(255,229,140,.28) 85%, rgba(255,229,140,0) 100%) !important;
+  box-shadow:0 0 14px rgba(255,234,166,.56), 0 0 24px rgba(226,184,73,.38) !important;
+  will-change:transform, opacity !important;
+  transform:translateY(0) !important;
+  animation:scanLineTravelV8 1.8s ease-in-out infinite !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state{
+  bottom:98px !important;
+  width:min(calc(100% - 78px), 278px) !important;
+  padding:12px 14px !important;
+  z-index:13 !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state strong,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state strong,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state strong{
+  font-size:13px !important;
+  margin-bottom:6px !important;
+}
+body[data-page="rapat"] .attendance-camera-stage .camera-empty-state span,
+body[data-page="piket-rom"] .ro-camera-stage .camera-empty-state span,
+body[data-page="piket-ro"] .ro-camera-stage .camera-empty-state span{
+  font-size:11.5px !important;
+  line-height:1.42 !important;
+}
+@keyframes scanLineTravelV8{
+  0%,100%{ transform:translateY(0); opacity:.3; }
+  12%{ opacity:1; }
+  50%{ transform:translateY(var(--scan-travel)); opacity:1; }
+}
+
+
+/* v10 empty-state dark cleanup */
+.empty-state,
+.timeline-grid .empty-state,
+#meetingTimelineGrid .empty-state,
+#roSessionTimeline.empty-state,
+#meetingAttendanceList.empty-state {
+  background: linear-gradient(180deg, rgba(10,18,34,.96), rgba(7,13,26,.98)) !important;
+  border: 1px solid rgba(226,184,73,.12) !important;
+  color: var(--v5-text) !important;
+  box-shadow: 0 18px 36px rgba(0,0,0,.18) !important;
+  border-radius: 22px !important;
+  padding: 18px 18px 16px !important;
+}
+.empty-state strong,
+.timeline-grid .empty-state strong,
+#meetingTimelineGrid .empty-state strong {
+  color: var(--v5-text) !important;
+}
+.empty-state span,
+.timeline-grid .empty-state span,
+#meetingTimelineGrid .empty-state span {
+  color: rgba(233,239,255,.76) !important;
+}
+.empty-state .btn,
+.timeline-grid .empty-state .btn,
+#meetingTimelineGrid .empty-state .btn {
+  width: 100% !important;
+  border-radius: 18px !important;
+}
