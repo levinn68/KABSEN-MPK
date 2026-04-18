@@ -1,0 +1,6 @@
+window.APP_CONFIG = {
+  SUPABASE_URL: 'https://mkjbtckqgdmyppxigdhu.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ramJ0Y2txZ2RteXBweGlnZGh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNTU1NDksImV4cCI6MjA5MTgzMTU0OX0.Tm8Dmi0cQJSQ84xvsDbu1qqYm7vShFORqrEwoc8PYo4',
+  SITE_ACCESS_PASSWORD: 'MPKZONETH26',
+  SITE_ACCESS_SESSION_KEY: 'mpk_site_access_ok'
+};
