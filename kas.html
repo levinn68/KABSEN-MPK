@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK KABSEN — Kas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/pages.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/mobile.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/loader.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v4.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v5.css?v=20260418k" />
+</head>
+<body data-page="kas">
+  <div class="app-shell compact-shell">
+    <aside class="sidebar">
+      <a href="./dashboard.html" class="brand brand-logo-lockup"><img src="./assets/img/mpk-zone-mark.svg" alt="Logo MPK Zone" class="brand-image"><div><strong>MPK ZONE</strong><small>SMP Tunas Harapan</small></div></a>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="./dashboard.html">Dashboard</a>
+        <a class="nav-link active" href="./kas.html">Kas</a>
+        <a class="nav-link" href="./rapat.html">Rapat</a>
+        <a class="nav-link" href="./piket-rom.html">Piket ROM</a>
+        <a class="nav-link" href="./anggota.html">Anggota</a>
+</nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header split">
+        <div>
+          <p class="eyebrow">Kas Mingguan</p>
+          <h1>Pengelolaan kas mingguan dan tindak lanjut tunggakan</h1>
+          <p class="subtitle">Gunakan halaman ini untuk mencatat pembayaran, memantau denda, dan melihat status kas anggota per minggu sekolah.</p>
+        </div>
+        <div class="topbar-actions"><button class="btn btn-primary" id="btnOpenPaymentModal">Tambah Pembayaran</button></div>
+      </header>
+
+      <section class="stats-grid three-up" id="cashStatsGrid">
+        <article class="stat-card"><span class="stat-label">Tarif Kas</span><strong>Rp 5.000</strong><small>Per anggota / minggu</small></article>
+        <article class="stat-card"><span class="stat-label">Denda Harian</span><strong>Rp 2.000</strong><small>Mulai setelah Rabu</small></article>
+        <article class="stat-card"><span class="stat-label">Anggota Menunggak</span><strong>17</strong><small>Perlu follow-up</small></article>
+      </section>
+
+      <section class="content-grid two-columns">
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">Input Pembayaran</p><h3>Catat pembayaran kas anggota</h3></div></div>
+          <form class="form-grid" id="cashPaymentForm">
+            <label><span>Nama Anggota</span><select id="paymentMemberId"><option value="">Pilih anggota</option></select></label>
+            <label><span>Pekan Pembayaran</span><select id="paymentCycleSelect"><option value="">Pilih minggu</option></select></label>
+            <label><span>Status</span><select id="paymentStatusView"><option>Lunas otomatis</option></select></label>
+            <label class="full"><span>Catatan</span><textarea id="paymentNote" rows="4" placeholder="Tambahkan catatan bila perlu"></textarea></label>
+            <div class="form-actions full"><button class="btn btn-primary" type="submit" id="btnSavePayment">Simpan Pembayaran</button></div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">Aturan Pembayaran</p><h3>Ketentuan kas yang sedang berlaku</h3></div></div>
+          <div class="setting-list" id="cashRulesList">
+            <div class="setting-item"><span>Batas aman pembayaran</span><strong>Rabu</strong></div>
+            <div class="setting-item"><span>Denda berlapis</span><strong>Aktif</strong></div>
+            <div class="setting-item"><span>Notifikasi tunggakan</span><strong>Otomatis</strong></div>
+            <div class="setting-item"><span>Mode validasi</span><strong>Password bendahara</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel week-browser-panel">
+        <div class="panel-head split-wrap">
+          <div><p class="eyebrow">Pilihan Minggu</p><h3>Minggu sekolah yang tersedia</h3><p class="subtitle compact-text">Pilih minggu untuk melihat anggota yang masih menunggak, denda yang berjalan, dan periode Senin–Jumat yang aktif.</p></div>
+        </div>
+        <div class="week-chip-list" id="cashWeekChipList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head split-wrap">
+          <div><p class="eyebrow">Status Mingguan</p><h3>Daftar anggota, tunggakan, dan denda per minggu</h3><p class="week-label" id="cashWeekLabel">Minggu aktif sekolah</p></div>
+          <div class="filters-inline cash-status-only" id="cashFilters">
+            <select id="cashWeekFilter" class="visually-hidden" aria-hidden="true"><option value="">Pilih minggu</option></select>
+            <select id="cashStatusFilter"><option value="all">Semua status</option><option value="paid">Sudah bayar</option><option value="unpaid">Belum bayar</option></select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Nama</th><th>Divisi</th><th>Status</th><th>Kas</th><th>Denda</th><th>Total</th><th>Tindak lanjut</th></tr></thead>
+            <tbody id="cashStatusTable">
+              <tr><td>Donna</td><td>MPK</td><td><span class="pill success">Lunas</span></td><td>Rp 5.000</td><td>Rp 0</td><td>Rp 5.000</td><td><a href="#" class="text-link">Detail</a></td></tr>
+              <tr><td>Geofani</td><td>MPK</td><td><span class="pill danger">Belum bayar</span></td><td>Rp 5.000</td><td>Rp 4.000</td><td>Rp 9.000</td><td><a href="#" class="text-link">Ingatkan</a></td></tr>
+              <tr><td>Zaki</td><td>OSIS</td><td><span class="pill warning">Denda aktif</span></td><td>Rp 5.000</td><td>Rp 2.000</td><td>Rp 7.000</td><td><a href="#" class="text-link">Tandai bayar</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <div id="appModalRoot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./assets/js/config.js?v=20260418k"></script>
+  <script src="./assets/js/supabase.js?v=20260418k"></script>
+  <script src="./assets/js/page-hooks.js?v=20260418k"></script>
+  <script src="./assets/js/loader.js?v=20260418k"></script>
+  <script src="./assets/js/main.js?v=20260418k"></script>
+  <script src="./assets/js/page-transitions.js?v=20260418k"></script>
+</body>
+</html>

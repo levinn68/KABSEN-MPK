@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK KABSEN — Rapat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/pages.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/mobile.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/loader.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v4.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v5.css?v=20260418k" />
+</head>
+<body data-page="rapat">
+  <div class="app-shell compact-shell">
+    <aside class="sidebar">
+      <a href="./dashboard.html" class="brand brand-logo-lockup"><img src="./assets/img/mpk-zone-mark.svg" alt="Logo MPK Zone" class="brand-image"><div><strong>MPK ZONE</strong><small>SMP Tunas Harapan</small></div></a>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="./dashboard.html">Dashboard</a>
+        <a class="nav-link" href="./kas.html">Kas</a>
+        <a class="nav-link active" href="./rapat.html">Rapat</a>
+        <a class="nav-link" href="./piket-rom.html">Piket ROM</a>
+        <a class="nav-link" href="./anggota.html">Anggota</a>
+</nav>
+    </aside>
+
+    
+    <main class="main-content">
+      <header class="page-header split">
+        <div>
+          <p class="eyebrow">Rapat dan Kehadiran</p>
+          <h1>Pengelolaan sesi rapat dan kehadiran anggota</h1>
+          <p class="subtitle">Buat sesi rapat, pilih agenda aktif, lalu catat kehadiran anggota secara langsung dari halaman ini.</p>
+        </div>
+        <button class="btn btn-primary" id="btnOpenMeetingModal">Buat Sesi Rapat</button>
+      </header>
+
+      <section class="timeline-grid" id="meetingTimelineGrid"></section>
+
+      <section class="content-grid two-columns meeting-detail-grid">
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">Detail Sesi</p><h3 id="meetingDetailTitle">Belum ada sesi dipilih</h3></div></div>
+          <div class="detail-list" id="meetingDetailList"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">Ringkasan Kehadiran</p><h3>Siapa saja yang sudah scan di sesi ini</h3></div></div>
+          <ul class="activity-list compact" id="meetingAttendanceList"></ul>
+        </article>
+      </section>
+
+      <section class="panel attendance-summary-panel in-rapat-panel">
+        <div class="panel-head attendance-summary-head">
+          <div>
+            <p class="eyebrow">Sesi Aktif</p>
+            <h3 id="activeMeetingTitle">Belum ada sesi rapat</h3>
+          </div>
+          <div class="meeting-week-chip" id="meetingWeekLabel">Pilih sesi rapat</div>
+        </div>
+        <div class="attendance-summary-grid">
+          <article class="attendance-mini-card"><span>Target hadir</span><strong id="attendanceTargetCount">0</strong></article>
+          <article class="attendance-mini-card"><span>Sudah scan</span><strong id="attendanceDoneCount">0</strong></article>
+          <article class="attendance-mini-card"><span>Belum hadir</span><strong id="attendancePendingCount">0</strong></article>
+        </div>
+      </section>
+
+      <section class="attendance-page-grid rapat-scan-grid">
+        <article class="camera-panel attendance-camera-panel">
+          <label class="field-inline full-width">
+            <span>Pilih sesi rapat</span>
+            <select id="attendanceMeetingId"><option value="">Pilih sesi rapat</option></select>
+          </label>
+          <select id="faceMemberId" class="visually-hidden"><option value="">Pilih anggota</option></select>
+          <div class="camera-stage attendance-camera-stage" id="cameraStage">
+            <video id="cameraVideo" playsinline muted autoplay></video>
+            <canvas id="cameraCanvas" hidden></canvas>
+            <div class="camera-overlay"><div class="scan-frame"><span class="scan-line" aria-hidden="true"></span></div></div>
+            <div class="camera-empty-state"><div><strong>Kamera siap diaktifkan</strong><span>Arahkan wajah anggota ke area frame lalu tekan scan untuk mencatat hadir rapat.</span></div></div>
+            <div class="camera-status-chip" id="cameraStatusChip">Kamera belum aktif</div>
+          </div>
+          <div class="camera-actions attendance-camera-actions">
+            <button class="btn btn-ghost" id="btnToggleAttendanceCamera" type="button">Nyalakan Kamera</button>
+            <button class="btn btn-primary" id="btnTakeAttendance" type="button">Scan Kehadiran</button>
+          </div>
+        </article>
+        <div class="attendance-side-stack">
+          <article class="panel ro-roster-panel">
+            <div class="panel-head"><div><p class="eyebrow">Peserta Sesi</p><h3>Status kehadiran rapat</h3><p class="compact-text">Daftar anggota pada sesi terpilih berikut status scan kehadirannya.</p></div></div>
+            <div class="table-wrap ro-tight-table roster-scroll-fix">
+              <table>
+                <thead><tr><th>Nama</th><th>Status</th><th>Waktu scan</th></tr></thead>
+                <tbody id="attendanceRosterTable"><tr><td colspan="3">Belum ada sesi rapat.</td></tr></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  
+  <div id="appModalRoot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./assets/js/config.js?v=20260418k"></script>
+  <script src="./assets/js/supabase.js?v=20260418k"></script>
+  <script src="./assets/js/page-hooks.js?v=20260418k"></script>
+  <script src="./assets/js/loader.js?v=20260418k"></script>
+  <script src="./assets/js/main.js?v=20260418k"></script>
+  <script src="./assets/js/page-transitions.js?v=20260418k"></script>
+</body>
+</html>

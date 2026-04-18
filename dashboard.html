@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK KABSEN — Dashboard</title>
+  <meta name="description" content="Dashboard utama pengelolaan kas, absensi, dan rapat organisasi sekolah." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/pages.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/mobile.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/loader.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v4.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v5.css?v=20260418k" />
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="./dashboard.html" class="brand brand-logo-lockup">
+        <img src="./assets/img/mpk-zone-mark.svg" alt="Logo MPK Zone" class="brand-image">
+        <div>
+          <strong>MPK ZONE</strong>
+          <small>SMP Tunas Harapan</small>
+        </div>
+      </a>
+
+      <div class="sidebar-group">
+        <p class="sidebar-label">Navigasi Utama</p>
+        <nav class="sidebar-nav">
+        <a class="nav-link active" href="./dashboard.html">Dashboard</a>
+        <a class="nav-link" href="./kas.html">Kas</a>
+        <a class="nav-link" href="./rapat.html">Rapat</a>
+        <a class="nav-link" href="./piket-rom.html">Piket ROM</a>
+        <a class="nav-link" href="./anggota.html">Anggota</a>
+</nav>
+      </div>
+
+      <div class="sidebar-card" id="systemStatusCard">
+        <span class="eyebrow">Status Sistem</span>
+        <h3>Semua sinkron</h3>
+        <p>Database, absensi, dan laporan terakhir diperbarui 2 menit lalu.</p>
+        <span class="pill success">Online</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Dashboard MPK Zone</p>
+          <h1>Dashboard operasional MPK ZONE SMP Tunas Harapan</h1>
+          <p class="subtitle">Pantau kas, rapat, absensi, dan piket dalam satu tampilan yang rapi, cepat dibaca, dan siap dipakai untuk operasional harian.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost" type="button" id="btnDashboardExport">Ekspor</button>
+          <button class="btn btn-primary" type="button" id="btnQuickAddActivity">Tambah Aktivitas</button>
+        </div>
+      </header>
+
+      <section class="hero-panel" id="dashboardHero">
+        <div>
+          <span class="pill primary">Live Overview</span>
+          <h2>Ringkasan utama organisasi langsung terlihat dari halaman awal</h2>
+          <p>Informasi inti ditampilkan untuk memudahkan pemantauan kas aktif, tunggakan, kehadiran rapat, dan kedisiplinan anggota.</p>
+        </div>
+        <div class="hero-metrics" id="dashboardHeroMetrics">
+          <article class="metric-card featured">
+            <span>Total Saldo Kas</span>
+            <strong>Rp 4.850.000</strong>
+            <small>Naik 12% dari bulan lalu</small>
+          </article>
+          <article class="metric-card">
+            <span>Tunggakan Aktif</span>
+            <strong>Rp 214.000</strong>
+            <small>17 anggota belum lunas</small>
+          </article>
+          <article class="metric-card">
+            <span>Kehadiran Minggu Ini</span>
+            <strong>89%</strong>
+            <small>Naik 6% dari sesi sebelumnya</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="stats-grid" id="dashboardStatsGrid">
+        <article class="stat-card">
+          <span class="stat-label">Kas Pokok</span>
+          <strong>Rp 3.920.000</strong>
+          <small>Target bulanan hampir tercapai</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Denda Masuk</span>
+          <strong>Rp 930.000</strong>
+          <small>Mayoritas dari tunggakan > 2 hari</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Anggota Aktif</span>
+          <strong>48</strong>
+          <small>5 divisi terhubung</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Rapat Bulan Ini</span>
+          <strong>6 sesi</strong>
+          <small>4 selesai, 2 terjadwal</small>
+        </article>
+      </section>
+
+      <section class="content-grid two-columns">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Ringkasan Mingguan</p>
+              <h3>Performa kas per pekan</h3>
+            </div>
+            <a href="./kas.html" class="text-link">Lihat detail kas</a>
+          </div>
+          <div class="fake-chart-bars" id="weeklyChartBars">
+            <div><span>W1</span><i style="height: 48%"></i></div>
+            <div><span>W2</span><i style="height: 65%"></i></div>
+            <div><span>W3</span><i style="height: 80%"></i></div>
+            <div><span>W4</span><i style="height: 58%"></i></div>
+            <div><span>W5</span><i style="height: 92%"></i></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Alert</p>
+              <h3>Prioritas hari ini</h3>
+            </div>
+          </div>
+          <ul class="activity-list" id="dashboardAlertList">
+            <li>
+              <strong>12 anggota masuk masa denda</strong>
+              <span>Batas aman pembayaran sudah lewat Rabu.</span>
+            </li>
+            <li>
+              <strong>1 sesi rapat belum ditutup</strong>
+              <span>Pastikan absensi wajah dan manual sudah sinkron.</span>
+            </li>
+            <li>
+              <strong>3 wajah baru perlu verifikasi</strong>
+              <span>Cocokkan foto dengan data anggota.</span>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="content-grid two-columns">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Pembayaran Terakhir</p>
+              <h3>Aktivitas kas terbaru</h3>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Minggu</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardRecentPayments">
+                <tr><td>Jessica</td><td>Minggu 5</td><td><span class="pill success">Lunas</span></td><td>Rp 5.000</td></tr>
+                <tr><td>Axel</td><td>Minggu 5</td><td><span class="pill warning">Denda +2 hari</span></td><td>Rp 9.000</td></tr>
+                <tr><td>Salsabila</td><td>Minggu 5</td><td><span class="pill success">Lunas</span></td><td>Rp 5.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Quick Access</p>
+              <h3>Akses cepat</h3>
+            </div>
+          </div>
+          <div class="shortcut-grid" id="dashboardShortcutGrid">
+            <a class="shortcut-card" href="./kas.html">
+              <strong>Input Pembayaran</strong>
+              <span>Tandai anggota sudah bayar kas.</span>
+            </a>
+            <a class="shortcut-card" href="./rapat.html">
+              <strong>Absen Rapat</strong>
+              <span>Buka kamera dan catat kehadiran rapat.</span>
+            </a>
+            <a class="shortcut-card" href="./rapat.html">
+              <strong>Buat Sesi Rapat</strong>
+              <span>Atur jadwal dan daftar hadir.</span>
+            </a>
+            <a class="shortcut-card" href="./kas.html">
+              <strong>Lihat Detail Kas</strong>
+              <span>Buka halaman kas mingguan lengkap.</span>
+            </a>
+            <a class="shortcut-card" href="./piket-rom.html">
+              <strong>Scan Piket RO</strong>
+              <span>Tandai petugas yang sudah piket ruang OSIS.</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  
+  <div id="appModalRoot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./assets/js/config.js?v=20260418k"></script>
+  <script src="./assets/js/supabase.js?v=20260418k"></script>
+  <script src="./assets/js/page-hooks.js?v=20260418k"></script>
+  <script src="./assets/js/loader.js?v=20260418k"></script>
+  <script src="./assets/js/main.js?v=20260418k"></script>
+  <script src="./assets/js/page-transitions.js?v=20260418k"></script>
+</body>
+</html>

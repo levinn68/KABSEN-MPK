@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPK KABSEN — Anggota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/pages.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/mobile.css?v=20260418f" />
+  <link rel="stylesheet" href="./assets/css/loader.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v4.css?v=20260418k" />
+  <link rel="stylesheet" href="./assets/css/production-v5.css?v=20260418k" />
+</head>
+<body data-page="anggota">
+  <div class="app-shell compact-shell">
+    <aside class="sidebar">
+      <a href="./dashboard.html" class="brand brand-logo-lockup"><img src="./assets/img/mpk-zone-mark.svg" alt="Logo MPK Zone" class="brand-image"><div><strong>MPK ZONE</strong><small>SMP Tunas Harapan</small></div></a>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="./dashboard.html">Dashboard</a>
+        <a class="nav-link" href="./kas.html">Kas</a>
+        <a class="nav-link" href="./rapat.html">Rapat</a>
+        <a class="nav-link" href="./piket-rom.html">Piket ROM</a>
+        <a class="nav-link active" href="./anggota.html">Anggota</a>
+</nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header compact-page-header">
+        <div>
+          <p class="eyebrow">Anggota MPK</p>
+          <h1>Data anggota aktif MPK ZONE</h1>
+          <p class="subtitle">Cari anggota dengan cepat, lihat jabatan, status kas mingguan, dan ketersediaan profil wajah dalam satu halaman.</p>
+        </div>
+      </header>
+      <section class="toolbar-panel">
+        <div class="search-box"><input type="search" id="memberSearchInput" placeholder="Cari nama atau jabatan..." /></div>
+        <div class="filters-inline">
+          <select id="memberActiveFilter"><option value="active">Status aktif</option><option value="all">Semua status</option><option value="inactive">Nonaktif</option></select>
+          <select id="memberSortFilter"><option value="az">Urutkan A-Z</option><option value="za">Urutkan Z-A</option></select>
+        </div>
+      </section>
+      <section class="member-grid" id="memberGrid"></section>
+      <section class="panel">
+        <div class="panel-head"><div><p class="eyebrow">Tabel Lengkap</p><h3>Daftar anggota MPK</h3></div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Nama</th><th>Jabatan</th><th>Status Kas</th><th>Wajah</th><th>Profil</th></tr></thead>
+            <tbody id="memberTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="appModalRoot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./assets/js/config.js?v=20260418k"></script>
+  <script src="./assets/js/supabase.js?v=20260418k"></script>
+  <script src="./assets/js/page-hooks.js?v=20260418k"></script>
+  <script src="./assets/js/loader.js?v=20260418k"></script>
+  <script src="./assets/js/main.js?v=20260418k"></script>
+  <script src="./assets/js/page-transitions.js?v=20260418k"></script>
+</body>
+</html>

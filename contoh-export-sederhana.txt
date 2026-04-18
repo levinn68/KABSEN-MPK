@@ -1,0 +1,14 @@
+Contoh format export yang lebih gampang dibaca
+
+1) Rekap Kas
+minggu,periode,nama,status,kas_pokok,denda,total,dibayar_pada
+Minggu 1,2026-04-13 s/d 2026-04-17,Alvino,Lunas,Rp 5.000,Rp 2.000,Rp 7.000,2026-04-16 22:35
+Minggu 1,2026-04-13 s/d 2026-04-17,Jessica,Belum bayar + denda,Rp 5.000,Rp 4.000,Rp 9.000,-
+
+2) Rekap Absen Rapat
+sesi_rapat,tanggal_rapat,nama,status,waktu_scan,kecocokan
+Test rapat,2026-04-20,Alvino,Hadir terdeteksi,2026-04-18 13:19,100%
+
+3) Rekap Piket ROM
+sesi_piket,hari,tanggal,nama,status,waktu_scan,catatan
+Piket RO Kamis,KAMIS,2026-04-16,Alvino,Sudah piket,2026-04-18 12:43,Scan piket RO via web
